@@ -9,6 +9,21 @@ import UIKit
 import SnapKit
 
 final class SpendingsAndButtonView: UIView, GenericCellSubview {
+    enum Style {
+        case subscriptions
+        case main
+    }
+
+    func update(style: Style) {
+        self.spendingActionButton.update(style: style)
+        switch style {
+        case .subscriptions:
+            self.balanceView.titleLabel.text = "Recurent payments per month"
+        case .main:
+            self.balanceView.titleLabel.text = "Total Balance"
+        }
+    }
+
     init() {
         super.init(frame: .zero)
         self.setupInitialLayout()

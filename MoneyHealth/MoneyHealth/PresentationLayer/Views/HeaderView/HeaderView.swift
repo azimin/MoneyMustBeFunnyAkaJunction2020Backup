@@ -55,6 +55,8 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
         self.setupInitialLayout()
         self.nameLabel.text = "Egor Petrov"
         self.ratingView.ratingLabel.text = "5.0"
+
+        self.spendingsAndButtonView.update(style: .main)
     }
     
     required init?(coder: NSCoder) {

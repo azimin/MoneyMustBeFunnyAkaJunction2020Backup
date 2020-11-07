@@ -70,7 +70,11 @@ final class MostSpendItemView: UIView {
 
         self.setupInitialLayout()
     }
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setupInitialLayout() {
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints { make in

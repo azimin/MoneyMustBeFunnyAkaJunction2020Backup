@@ -27,6 +27,7 @@ final class SubscriptionsViewModel: ViewModelProtocol {
 
         self.collectionViewContainer = CollectionViewContainer(
             dataSources: [
+                TotalSubscriptionsDataSource(),
                 upcomingDataSource,
                 recommendedDataSource
             ]

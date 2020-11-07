@@ -7,10 +7,31 @@
 
 import UIKit
 import SnapKit
+import AnimatedGradientView
 
 final class SpendingActionButton: UIControl {
+    func update(style: SpendingsAndButtonView.Style) {
+        switch style {
+        case .subscriptions:
+            self.iconImageView.image = UIImage(named: "subscriptions_action")
+            self.titleLabel.text = "All Subscriptions"
+            self.gradientView2.isHidden = true
+        case .main:
+            self.iconImageView.image = UIImage(named: "AR")
+            self.titleLabel.text = "Spendings in AR"
+            self.gradientView.isHidden = true
+        }
+    }
+
+    override var isHighlighted: Bool {
+        didSet {
+            self.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
 
     let gradientView = UIImageView()
+
+    let gradientView2 = AnimatedGradientView()
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -56,6 +77,17 @@ final class SpendingActionButton: UIControl {
         self.gradientView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+
+        self.addSubview(self.gradientView2)
+        self.gradientView2.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        gradientView2.autoAnimate = true
+        gradientView2.animationValues = [(colors: ["#AB6CDD", "#EF3C7C"], .up, .axial),
+        (colors: ["#fcb045", "#fd1d1d", "#833ab4"], .right, .axial)]
+        gradientView2.animationDuration = 2
+        gradientView2.startAnimating()
 
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { make in
