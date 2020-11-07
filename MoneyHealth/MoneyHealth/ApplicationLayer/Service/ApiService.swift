@@ -48,7 +48,7 @@ class APIService {
             let dateString = formatter.string(from: date)
             
             AF.request(
-                "http://195.91.231.34:5000/user/insides/\(id)/2016-11-07/\(period.rawValue)",
+                "http://195.91.231.34:5000/user/insides/\(id)/last/\(period.rawValue)",
                 method: .get
             ).responseJSON { [weak self] json in
                 let parsedData = try! JSONSerialization.jsonObject(with: json.data!, options: .mutableLeaves) as! [String: AnyObject]
@@ -105,7 +105,7 @@ class APIService {
             let dateString = formatter.string(from: date)
 
             AF.request(
-                "http://195.91.231.34:5000/user/popular_categories/\(id)/2016-11-07/\(period.rawValue)",
+                "http://195.91.231.34:5000/user/popular_categories/\(id)/last/\(period.rawValue)",
                 method: .get
             ).responseJSON { [weak self] json in
                 let decoder = JSONDecoder()
