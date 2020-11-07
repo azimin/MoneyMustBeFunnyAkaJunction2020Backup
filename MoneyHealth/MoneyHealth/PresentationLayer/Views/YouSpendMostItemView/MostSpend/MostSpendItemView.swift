@@ -35,50 +35,15 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
         return label
     }()
 
-    let youSpendLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.textColor = .black
-        label.text = "You spend"
-        return label
-    }()
-
-    let directionImageView = UIImageView()
-
-    let percentLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .bold)
-        label.textColor = .black
-        return label
-    }()
-
-    let moreLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.textColor = .black
-        label.text = "more on"
-        return label
-    }()
-
-    let categoryLabel: UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 15, weight: .bold)
-        return label
-    }()
-
-    
-    let comparedLabel: UILabel = {
-        let label = UILabel()
-         label.font = .systemFont(ofSize: 15, weight: .medium)
-         label.textColor = .black
-         return label
-    }()
+    let descriptionLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.backgroundColor = .white
         self.layer.cornerRadius = 20
+        
+        self.descriptionLabel.numberOfLines = 0
 
         self.setupInitialLayout()
     }
@@ -114,45 +79,11 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
             make.trailing.lessThanOrEqualToSuperview().inset(16)
         }
 
-        self.addSubview(self.youSpendLabel)
-        self.youSpendLabel.snp.makeConstraints { make in
+        self.addSubview(self.descriptionLabel)
+        self.descriptionLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.top.equalTo(iconImageView.snp.bottom).offset(16)
-            
-        }
-
-        self.addSubview(self.directionImageView)
-        self.directionImageView.snp.makeConstraints { make in
-            make.leading.equalTo(self.youSpendLabel.snp.trailing).offset(4)
-            make.centerY.equalTo(self.youSpendLabel)
-            make.size.equalTo(10)
-        }
-
-        self.addSubview(self.percentLabel)
-        self.percentLabel.snp.makeConstraints { make in
-            make.leading.equalTo(self.directionImageView.snp.trailing).offset(4)
-            make.centerY.equalTo(self.youSpendLabel)
-        }
-    
-        self.addSubview(moreLabel)
-        self.moreLabel.snp.makeConstraints { make in
-            make.leading.equalTo(self.percentLabel.snp.trailing).offset(4)
-            make.centerY.equalTo(self.youSpendLabel)
-        }
-
-        self.addSubview(self.categoryLabel)
-        self.categoryLabel.snp.makeConstraints { make in
-            make.leading.equalTo(self.moreLabel.snp.trailing).offset(4)
-            make.centerY.equalTo(self.youSpendLabel)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
-        }
-
-        self.addSubview(self.comparedLabel)
-        self.comparedLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.top.equalTo(youSpendLabel.snp.bottom).offset(5)
-            make.trailing.lessThanOrEqualToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(21)
+            make.trailing.equalToSuperview().inset(16)
         }
     }
 
@@ -169,19 +100,128 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
             self.transactionsLabel.text = "\(model.data.numberOfTransactions) transactions"
         }
 
+        let attributedString = NSMutableAttributedString(
+            string: "You spend",
+            attributes: [
+                .foregroundColor: UIColor.black,
+                .font: UIFont.systemFont(ofSize: 15, weight: .medium)
+            ])
+        
+        let image: UIImage
+        let color: UIColor
+        
+        let percentString: String
+        let changesString: String
         if model.data.percent > 0 {
-            self.directionImageView.image = UIImage(named: "Up")
-            self.percentLabel.text = String(format: "%.0f%%", model.data.percent)
-            self.percentLabel.textColor = UIColor(hex: "1ED760")
+            image = UIImage(named: "Up")!
+            color = UIColor(hex: "1ED760")
+            percentString = String(format: "%.2f%%", model.data.percent)
+            changesString = "more on"
         } else {
-            self.directionImageView.image = UIImage(named: "Down")
-            self.percentLabel.text = String(format: "%.0f%%", model.data.percent * -1)
-            self.percentLabel.textColor = UIColor(hex: "FF2D6C")
+            image = UIImage(named: "Down")!
+            color = UIColor(hex: "FF2D6C")
+            percentString = String(format: "%.2f%%", model.data.percent * -1)
+            changesString = "less on"
         }
 
-        self.categoryLabel.text = model.data.category
-        self.categoryLabel.textColor = UIColor(hex: "006F46")
+        let productImageAttachment = NSTextAttachment()
+        productImageAttachment.image = image
+        productImageAttachment.bounds = .init(x: 0, y: 0, width: 10, height: 10)
+        let productAttachmentString = NSAttributedString(attachment: productImageAttachment)
         
-        self.comparedLabel.text = "compared to the \(model.data.period)"
+        attributedString.append(.init(
+            string: "\u{00a0}",
+            attributes: [
+                .foregroundColor: color,
+                .font: UIFont.systemFont(ofSize: 15, weight: .medium)
+            ]
+        ))
+        attributedString.append(productAttachmentString)
+        attributedString.append(.init(
+            string: "\u{00a0}",
+            attributes: [
+                .foregroundColor: color,
+                .font: UIFont.systemFont(ofSize: 15, weight: .medium)
+            ]
+        ))
+
+        attributedString.append(
+            .init(
+                string: percentString,
+                attributes:
+                    [
+                        .foregroundColor: color,
+                        .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+                    ]
+            )
+        )
+
+        attributedString.append(
+            .init(
+                string: "\u{00a0}",
+                attributes:
+                    [
+                        .foregroundColor: color,
+                        .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+                    ]
+            )
+        )
+        
+        attributedString.append(
+            .init(
+                string: changesString,
+                attributes:
+                    [
+                    .foregroundColor: UIColor.black,
+                    .font: UIFont.systemFont(ofSize: 15, weight: .medium)
+                    ]
+            )
+        )
+        
+        attributedString.append(
+            .init(
+                string: "\u{00a0}",
+                attributes:
+                    [
+                        .foregroundColor: color,
+                        .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+                    ]
+            )
+        )
+        
+        attributedString.append(
+            .init(
+                string: model.data.category,
+                attributes:
+                    [
+                    .foregroundColor: UIColor(hex: "FF9C87"),
+                    .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+                    ]
+            )
+        )
+        
+        attributedString.append(
+            .init(
+                string: "\u{00a0}",
+                attributes:
+                    [
+                        .foregroundColor: color,
+                        .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+                    ]
+            )
+        )
+        
+        attributedString.append(
+            .init(
+                string: "compared to the last \(model.data.period.rawValue)",
+                attributes:
+                    [
+                    .foregroundColor: UIColor.black,
+                    .font: UIFont.systemFont(ofSize: 15, weight: .medium)
+                    ]
+            )
+        )
+        
+        self.descriptionLabel.attributedText = attributedString
     }
 }
