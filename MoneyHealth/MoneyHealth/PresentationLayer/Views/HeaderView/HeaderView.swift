@@ -7,8 +7,16 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class HeaderView: UIView {
+final class HeaderView: UIView, GenericConfigurableCellComponent {
+    typealias Model = HeaderItemModel
+    typealias ViewData = HeaderItemViewData
+
+    var model: HeaderItemModel?
+
+    var disposeBag = DisposeBag()
 
     let avatarView = ImageViewWithProgress()
 
@@ -112,6 +120,43 @@ final class HeaderView: UIView {
             make.height.equalTo(128)
             make.trailing.equalToSuperview().inset(16)
         }
+    }
+
+    func configure(with model: HeaderItemModel) {
+        self.model = model
+        self.bindOutput(from: model)
+    }
+
+    func bindOutput(from model: HeaderItemModel) {
+        model.imageURL
+            .subscribe(onNext: { [unowned self] in
+                guard let url = $0 else {
+                    return
+                }
+                self.avatarView.loadImageByUrl(url)
+            })
+            .disposed(by: self.disposeBag)
+
+        model.name
+            .bind(to: self.nameLabel.rx.text)
+            .disposed(by: self.disposeBag)
+
+        model.balance
+            .map { return "$\($0)" }
+            .bind(to: self.balanceView.balanceLabel.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        model.rating
+            .map { return "\($0)" }
+            .bind(to: self.ratingView.ratingLabel.rx.text)
+            .disposed(by: self.disposeBag)
+
+        model.rating
+            .map { return $0/5 }
+            .subscribe(onNext: { [unowned self] in
+                self.avatarView.currentProgress = CGFloat($0)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
