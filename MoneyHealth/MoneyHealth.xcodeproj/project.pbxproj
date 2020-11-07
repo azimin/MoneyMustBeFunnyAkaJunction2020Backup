@@ -20,7 +20,6 @@
 		2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEE22556C6FE00E049B8 /* BalanceView.swift */; };
 		2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEE62556C9D900E049B8 /* ShowSpendsInAR.swift */; };
 		234A7CB22555514000620B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB12555514000620B81 /* AppDelegate.swift */; };
-		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
 		234A7CBB2555514100620B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBA2555514100620B81 /* Assets.xcassets */; };
 		234A7CBE2555514100620B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBC2555514100620B81 /* LaunchScreen.storyboard */; };
 		23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538672556CDC0008DF7D7 /* CollectionViewContainer.swift */; };
@@ -37,6 +36,9 @@
 		23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */; };
 		9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09182556E27000FA4791 /* SubscriptionView.swift */; };
 		9FCA091C2556E31000FA4791 /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */; };
+		23B538A52556E29A008DF7D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A42556E29A008DF7D7 /* MainView.swift */; };
+		23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A82556E30B008DF7D7 /* MainViewModel.swift */; };
+		23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AC2556E3A9008DF7D7 /* MainViewController.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +58,6 @@
 		2317FEE62556C9D900E049B8 /* ShowSpendsInAR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSpendsInAR.swift; sourceTree = "<group>"; };
 		234A7CAE2555514000620B81 /* MoneyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A7CB12555514000620B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		234A7CB52555514000620B81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		234A7CBA2555514100620B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		234A7CBD2555514100620B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		234A7CBF2555514100620B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +73,9 @@
 		23B538982556DE35008DF7D7 /* SpendingViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingViewData.swift; sourceTree = "<group>"; };
 		23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemModel.swift; sourceTree = "<group>"; };
 		23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
+		23B538A42556E29A008DF7D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		23B538A82556E30B008DF7D7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		23B538AC2556E3A9008DF7D7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCA09182556E27000FA4791 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		2317FEAD2556B57500E049B8 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				23B538A22556E280008DF7D7 /* Flows */,
 				23B538662556CDB6008DF7D7 /* Collections */,
 				2317FEAE2556B58E00E049B8 /* Views */,
 			);
@@ -257,7 +262,6 @@
 				2317FEAD2556B57500E049B8 /* PresentationLayer */,
 				2317FE9125569FCA00E049B8 /* ApplicationLayer */,
 				234A7CB12555514000620B81 /* AppDelegate.swift */,
-				234A7CB52555514000620B81 /* ViewController.swift */,
 				234A7CBA2555514100620B81 /* Assets.xcassets */,
 				234A7CBC2555514100620B81 /* LaunchScreen.storyboard */,
 				234A7CBF2555514100620B81 /* Info.plist */,
@@ -304,6 +308,24 @@
 				23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */,
 			);
 			path = SpendingView;
+			sourceTree = "<group>";
+		};
+		23B538A22556E280008DF7D7 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				23B538A32556E288008DF7D7 /* MainModule */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		23B538A32556E288008DF7D7 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				23B538A42556E29A008DF7D7 /* MainView.swift */,
+				23B538A82556E30B008DF7D7 /* MainViewModel.swift */,
+				23B538AC2556E3A9008DF7D7 /* MainViewController.swift */,
+			);
+			path = MainModule;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -446,13 +468,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */,
+				23B538A52556E29A008DF7D7 /* MainView.swift in Sources */,
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
 				23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */,
-				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */,
 				9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */,
 				23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */,
+				23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */,
 				2317FEDD2556C29100E049B8 /* RatingView.swift in Sources */,
 				2317FEC62556B6F100E049B8 /* UIColor+Hex.swift in Sources */,
 				234A7CB22555514000620B81 /* AppDelegate.swift in Sources */,
@@ -463,6 +486,7 @@
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
 				23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */,
 				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
+				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
