@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "ipad-10.5.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "inches",
+    "width" : 8.4239999999999995
+  }
+}
