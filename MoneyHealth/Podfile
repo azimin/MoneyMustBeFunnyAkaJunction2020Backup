@@ -8,6 +8,7 @@ target 'MoneyHealth' do
   pod 'Nuke'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'AnimatedGradientView'
 
   # Pods for MoneyHealth
 
