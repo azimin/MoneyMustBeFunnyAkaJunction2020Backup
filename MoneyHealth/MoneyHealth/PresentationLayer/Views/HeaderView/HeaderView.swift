@@ -45,6 +45,8 @@ final class HeaderView: UIView {
         self.setupInitialLayout()
         self.nameLabel.text = "Egor Petrov"
         self.ratingView.ratingLabel.text = "5.0"
+
+        self.backgroundColor = UIColor(hex: "E5E5E5")
     }
     
     required init?(coder: NSCoder) {

@@ -17,6 +17,7 @@
 		2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FED02556BDD800E049B8 /* ImageViewWithProgress.swift */; };
 		2317FED92556C17700E049B8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FED82556C17700E049B8 /* HeaderView.swift */; };
 		2317FEDD2556C29100E049B8 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEDC2556C29100E049B8 /* RatingView.swift */; };
+		2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEE22556C6FE00E049B8 /* BalanceView.swift */; };
 		234A7CB22555514000620B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB12555514000620B81 /* AppDelegate.swift */; };
 		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
 		234A7CBB2555514100620B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBA2555514100620B81 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		2317FED02556BDD800E049B8 /* ImageViewWithProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWithProgress.swift; sourceTree = "<group>"; };
 		2317FED82556C17700E049B8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2317FEDC2556C29100E049B8 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		2317FEE22556C6FE00E049B8 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		234A7CAE2555514000620B81 /* MoneyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A7CB12555514000620B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A7CB52555514000620B81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		2317FEAE2556B58E00E049B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2317FEE12556C6E100E049B8 /* Balance */,
 				2317FEDB2556C27F00E049B8 /* RatingView */,
 				2317FEB62556B5DF00E049B8 /* ProgressView */,
 				2317FEB52556B5BC00E049B8 /* ImageView */,
@@ -176,6 +179,14 @@
 				2317FEDC2556C29100E049B8 /* RatingView.swift */,
 			);
 			path = RatingView;
+			sourceTree = "<group>";
+		};
+		2317FEE12556C6E100E049B8 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEE22556C6FE00E049B8 /* BalanceView.swift */,
+			);
+			path = Balance;
 			sourceTree = "<group>";
 		};
 		234A7CA52555514000620B81 = {
@@ -353,6 +364,7 @@
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
 				2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */,
+				2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
