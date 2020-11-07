@@ -65,6 +65,7 @@
 		9F22F4ED25571559005F24B1 /* SubscriptionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4EA25571559005F24B1 /* SubscriptionsListViewController.swift */; };
 		9F22F4EE25571559005F24B1 /* SubscriptionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4EB25571559005F24B1 /* SubscriptionsListViewModel.swift */; };
 		9F22F4F425572921005F24B1 /* SubscriptionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4F325572921005F24B1 /* SubscriptionDetailsViewController.swift */; };
+		9F22F515255747F8005F24B1 /* CategoryToColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F514255747F8005F24B1 /* CategoryToColorMap.swift */; };
 		9F3013E6255704E1006C6474 /* SubscriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */; };
 		9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */; };
 		9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */; };
@@ -150,6 +151,7 @@
 		9F22F4EA25571559005F24B1 /* SubscriptionsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsListViewController.swift; sourceTree = "<group>"; };
 		9F22F4EB25571559005F24B1 /* SubscriptionsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsListViewModel.swift; sourceTree = "<group>"; };
 		9F22F4F325572921005F24B1 /* SubscriptionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailsViewController.swift; sourceTree = "<group>"; };
+		9F22F514255747F8005F24B1 /* CategoryToColorMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToColorMap.swift; sourceTree = "<group>"; };
 		9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionHeaderView.swift; sourceTree = "<group>"; };
 		9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSubscriptionsDataSource.swift; sourceTree = "<group>"; };
 		9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				23B5390825573219008DF7D7 /* ApiService.swift */,
+				9F22F514255747F8005F24B1 /* CategoryToColorMap.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				23B538C82556F6ED008DF7D7 /* PopularCategoryItemViewData.swift in Sources */,
 				23B538D02556FE90008DF7D7 /* TitleDataSource.swift in Sources */,
 				23B5391B25573DE3008DF7D7 /* BehaviourModel.swift in Sources */,
+				9F22F515255747F8005F24B1 /* CategoryToColorMap.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
 				9FB3AC852557009E005E243A /* ListOfSubscriptionsDataSource.swift in Sources */,
 				9F22F4EC25571559005F24B1 /* SubscriptionsListView.swift in Sources */,
