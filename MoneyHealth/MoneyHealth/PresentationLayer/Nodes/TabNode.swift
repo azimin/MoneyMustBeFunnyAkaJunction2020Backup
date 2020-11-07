@@ -5,6 +5,8 @@ class TabNode: SCNNode {
     
     var tabNodes: [SCNNode] = []
     var contentNodes: [SCNNode] = []
+    var navigationNode: SCNNode!
+
     override init() {
         super.init()
         let icons = [UIImage(named: "balance-icon"), UIImage(named: "stats-icon"), UIImage(named: "renew-icon")]
@@ -20,6 +22,16 @@ class TabNode: SCNNode {
             self.tabNodes.append(boxNode)
             self.addChildNode(boxNode)
         }
+
+        let box = SCNPlane(width: 0.014, height: 0.014)
+        let boxNode = SCNNode(geometry: box)
+        boxNode.pivot = SCNMatrix4MakeTranslation(-Float(box.width) / 2, 0, 0)
+        boxNode.position.x = 0.01 * 2 - 0.004 / 2
+        boxNode.position.y = -0.0001
+        boxNode.eulerAngles.x = -.pi / 2
+        boxNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "tab_selection")
+        self.addChildNode(boxNode)
+        self.navigationNode = boxNode
         
         let fakeBalance = SCNPlane(width: 0.1, height: 0.1)
         fakeBalance.firstMaterial?.diffuse.contents = UIImage(named: "fake-balance")
@@ -69,6 +81,9 @@ class TabNode: SCNNode {
         self.contentNodes[self.currentIndex].runAction(.sequence([self.tabPresentationAction, .run({ (node) in
             (node as? Transitionable)?.onTransitionIn(duration: 0.1)
         })]) )
+
+//        self.navigationNode.position.x = (0.01 * Float(self.currentIndex) * 2) - 0.004 / 2
+        self.navigationNode.runAction(self.moveCoursorAction)
     }
     
     var tabPresentationAction: SCNAction {
@@ -83,6 +98,11 @@ class TabNode: SCNNode {
                 .scale(to: 1.0, duration: 0.2)
             ]),
         ])
+    }
+
+    var moveCoursorAction: SCNAction {
+        let x = (0.01 * Float(self.currentIndex) * 2) - 0.004 / 2
+        return .move(to: .init(x, self.navigationNode.position.y, self.navigationNode.position.z), duration: 0.2)
     }
     
     var goOutAction: SCNAction {
