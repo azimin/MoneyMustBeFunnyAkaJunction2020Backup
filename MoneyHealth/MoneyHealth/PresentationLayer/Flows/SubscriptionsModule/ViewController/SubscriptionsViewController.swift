@@ -18,6 +18,8 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
         self.viewModel = viewModel
 
         super.init(container: viewModel.collectionViewContainer)
+
+        self.tabBarItem = .init(title: "Subscriptions", image: UIImage(named: "tab_bar_subscriptions"), selectedImage: nil)
     }
 
     required init?(coder _: NSCoder) {

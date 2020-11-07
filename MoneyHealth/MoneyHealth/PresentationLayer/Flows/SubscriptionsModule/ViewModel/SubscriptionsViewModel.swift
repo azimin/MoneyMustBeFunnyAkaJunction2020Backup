@@ -22,7 +22,9 @@ final class SubscriptionsViewModel: ViewModelProtocol {
         self.output = Output()
         self.input = Input()
 
-        self.collectionViewContainer = CollectionViewContainer(dataSources: [])
+        let upcomingDataSource = UpCommingSubscriptionsDataSource()
+
+        self.collectionViewContainer = CollectionViewContainer(dataSources: [upcomingDataSource])
     }
 }
 

@@ -15,11 +15,9 @@ final class UpCommingSubscriptionsDataSource: CollectionViewDataSource {
     var isEnabled = true
     var state = DataSourceState.items
 
-    private var items = [SubscriptionModel]()
-
     var cellsForRegistration: [CollectionViewCell.Type]? {
         return [
-            GenericCollectionViewCell<SpendingView>.self
+            GenericCollectionViewCell<SubscriptionsCarouselView>.self
         ]
     }
 
@@ -32,12 +30,11 @@ final class UpCommingSubscriptionsDataSource: CollectionViewDataSource {
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return self.items.count
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = self.items[indexPath.row]
-        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SpendingView>.self, indexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionsCarouselView>.self, indexPath: indexPath)
         return cell
     }
 

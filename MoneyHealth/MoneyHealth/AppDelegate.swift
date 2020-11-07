@@ -13,11 +13,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
+
         let viewModel = MainViewModel()
-        let vc = MainViewController(viewModel: viewModel)
-        window?.rootViewController = vc
+        let mainVC = MainViewController(viewModel: viewModel)
+
+        let subscriptionsViewModel = SubscriptionsViewModel()
+        let subscriptionsVC = SubscriptionsViewController(viewModel: subscriptionsViewModel)
+
+        let tabBarController = UITabBarController()
+        tabBarController.tabBar.tintColor = .init(hex: "1A1A1A")
+        tabBarController.tabBar.unselectedItemTintColor = .init(hex: "D1D1D1")
+        tabBarController.viewControllers = [mainVC, subscriptionsVC]
+
+        let appearance = tabBarController.tabBar.standardAppearance
+        appearance.configureWithOpaqueBackground()
+        appearance.shadowImage = nil
+        appearance.shadowColor = nil
+        appearance.backgroundColor = nil
+        tabBarController.tabBar.standardAppearance = appearance
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         return true
     }
