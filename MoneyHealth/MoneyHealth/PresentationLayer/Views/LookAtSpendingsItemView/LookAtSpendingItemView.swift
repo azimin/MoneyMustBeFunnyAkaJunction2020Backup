@@ -8,8 +8,7 @@
 import UIKit
 import SnapKit
 
-final class LookAtSpendingItemView: UIView {
-
+final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Look at your spendings"
@@ -19,6 +18,8 @@ final class LookAtSpendingItemView: UIView {
     }()
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+
+    var items = [SpendingItemModel]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,4 +50,19 @@ final class LookAtSpendingItemView: UIView {
             make.bottom.equalToSuperview()
         }
     }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SpendingView>.self, indexPath: indexPath)
+        cell.customSubview.configure(with: self.items[indexPath.row])
+        return cell
+    }
+
 }

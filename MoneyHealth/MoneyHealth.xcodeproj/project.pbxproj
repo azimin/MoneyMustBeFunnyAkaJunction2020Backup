@@ -31,6 +31,10 @@
 		23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538812556DAE1008DF7D7 /* ViewHolder.swift */; };
 		23B538852556DB67008DF7D7 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538842556DB67008DF7D7 /* CellModel.swift */; };
 		23B538902556DC13008DF7D7 /* LookAtSpendingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */; };
+		23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538932556DD5A008DF7D7 /* SpendingView.swift */; };
+		23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538982556DE35008DF7D7 /* SpendingViewData.swift */; };
+		23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */; };
+		23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +66,10 @@
 		23B538812556DAE1008DF7D7 /* ViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHolder.swift; sourceTree = "<group>"; };
 		23B538842556DB67008DF7D7 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingItemView.swift; sourceTree = "<group>"; };
+		23B538932556DD5A008DF7D7 /* SpendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingView.swift; sourceTree = "<group>"; };
+		23B538982556DE35008DF7D7 /* SpendingViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingViewData.swift; sourceTree = "<group>"; };
+		23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingItemModel.swift; sourceTree = "<group>"; };
+		23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -260,6 +268,7 @@
 				23B5387E2556DAB9008DF7D7 /* CollectionViewController.swift */,
 				23B538812556DAE1008DF7D7 /* ViewHolder.swift */,
 				23B538842556DB67008DF7D7 /* CellModel.swift */,
+				23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -276,8 +285,19 @@
 			isa = PBXGroup;
 			children = (
 				23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */,
+				23B538962556DE28008DF7D7 /* SpendingView */,
 			);
 			path = LookAtSpendingsItemView;
+			sourceTree = "<group>";
+		};
+		23B538962556DE28008DF7D7 /* SpendingView */ = {
+			isa = PBXGroup;
+			children = (
+				23B538932556DD5A008DF7D7 /* SpendingView.swift */,
+				23B538982556DE35008DF7D7 /* SpendingViewData.swift */,
+				23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */,
+			);
+			path = SpendingView;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -411,11 +431,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */,
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
 				23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */,
 				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */,
+				23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */,
 				2317FEDD2556C29100E049B8 /* RatingView.swift in Sources */,
 				2317FEC62556B6F100E049B8 /* UIColor+Hex.swift in Sources */,
 				234A7CB22555514000620B81 /* AppDelegate.swift in Sources */,
@@ -425,7 +447,9 @@
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
 				23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */,
+				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
+				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
