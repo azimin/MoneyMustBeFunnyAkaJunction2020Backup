@@ -55,7 +55,7 @@ final class MainViewModel: ViewModelProtocol {
     var output: Output
     var input: Input
 
-    let apiService = APIService()
+    let apiService = APIService.shared
     
     let headerModel: HeaderItemModel
     let spendingsItemModel: LookAtSpendingsItemModel

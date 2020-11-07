@@ -115,7 +115,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             tabNode.scale = .init(0.6, 0.6, 0.6)
             tabNode.rotation.x = .pi / 3
             tabNode.position.z = -0.15
-            tabNode.position.x = 0.06
+            tabNode.position.x = -0.20
             tabNode.runAction(self.tabPresentationAction)
             node.addChildNode(tabNode)
         }
@@ -183,7 +183,7 @@ extension ViewController: ARSessionDelegate {
         
         self.lastRotation = node.rotation.z
         
-        self.velocities.append(velocity)
+        self.velocities.append(-velocity)
         
         if velocities.count > 5 {
             self.velocities.remove(at: 0)

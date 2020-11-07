@@ -18,6 +18,8 @@ struct MostSpendItemViewData: Hashable {
     let icon: UIImage
     
     let amount: Double
+    
+    let iconString: String
 
     let numberOfTransactions: Int
     

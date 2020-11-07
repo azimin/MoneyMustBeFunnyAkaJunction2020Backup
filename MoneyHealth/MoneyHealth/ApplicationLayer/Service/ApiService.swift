@@ -17,6 +17,8 @@ class APIService {
     let userAvatarURL = BehaviorSubject<URL?>(value: nil)
     let userBalance = BehaviorSubject<Double>(value: 0)
     let subscrptionPayment = BehaviorSubject<Double?>(value: nil)
+    
+    static let shared = APIService()
 
     func getUser(byID id: Int) {
         AF.request(
@@ -78,6 +80,7 @@ class APIService {
                     MostSpendItemViewData(
                         icon: UIImage(named: String($0.imageName.split(separator: ".")[0]))!,
                         amount: $0.amount,
+                        iconString: $0.imageName,
                         numberOfTransactions: $0.numberOfTransactions,
                         percent: $0.change,
                         category: $0.category,
@@ -114,7 +117,7 @@ class APIService {
                 let data = categories.map {
                     return PopularCategoryItemViewData(
                         categoryImage: UIImage(named: String($0.image_name.split(separator: ".")[0]))!,
-                        iconColor: .green,
+                        iconColor: CategoryToColorMap.imageToColor(imageName: $0.image_name),
                         categoryTitle: $0.name,
                         periodTitle: period.rawValue,
                         tendency: $0.change,

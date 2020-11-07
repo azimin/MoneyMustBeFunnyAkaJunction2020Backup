@@ -7,13 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 
-final class SpendingsAndButtonView: UIView, GenericCellSubview {
+final class SpendingsAndButtonView: UIView, GenericCellSubview, ReusableComponent {
     enum Style {
         case subscriptions
         case subscriptionsAll
         case main
     }
+    
+    var disposeBag = DisposeBag()
 
     func update(style: Style) {
         self.spendingActionButton.update(style: style)
@@ -64,5 +68,17 @@ final class SpendingsAndButtonView: UIView, GenericCellSubview {
             make.top.bottom.equalToSuperview()
             make.leading.equalTo(self.balanceView.snp.trailing).inset(-12)
         }
+    }
+
+    func configure() {
+        APIService.shared
+            .userBalance
+            .map { return "$\($0)" }
+            .bind(to: self.balanceView.balanceLabel.rx.text)
+            .disposed(by: self.disposeBag)
+    }
+
+    func reuse() {
+        self.disposeBag = DisposeBag()
     }
 }
