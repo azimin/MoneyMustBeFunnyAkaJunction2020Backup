@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "ipad-12.9.jpg",
+      "filename" : "ist_card.jpg",
       "idiom" : "universal"
     }
   ],
@@ -10,7 +10,6 @@
     "version" : 1
   },
   "properties" : {
-    "unit" : "inches",
-    "width" : 10.348000000000001
+    "width" : 0.050000000000000003
   }
 }

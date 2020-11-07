@@ -39,6 +39,7 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
     @objc
     func showAR() {
         let arVC = UIStoryboard(name: "AR", bundle: nil).instantiateInitialViewController()!
+        arVC.modalPresentationStyle = .fullScreen
         self.present(arVC, animated: true, completion: nil)
     }
 }
