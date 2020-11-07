@@ -53,8 +53,6 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
         super.init(frame: frame)
     
         self.setupInitialLayout()
-        self.nameLabel.text = "Egor Petrov"
-        self.ratingView.ratingLabel.text = "5.0"
 
         self.spendingsAndButtonView.update(style: .main)
     }
@@ -136,7 +134,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
             .disposed(by: self.disposeBag)
         
         model.rating
-            .map { return "\($0)" }
+            .map { return String(format: "%.2f%", $0) }
             .bind(to: self.ratingView.ratingLabel.rx.text)
             .disposed(by: self.disposeBag)
 
