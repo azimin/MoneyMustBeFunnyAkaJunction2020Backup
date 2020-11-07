@@ -102,7 +102,9 @@ class TabNode: SCNNode {
 
     var moveCoursorAction: SCNAction {
         let x = (0.01 * Float(self.currentIndex) * 2) - 0.004 / 2
-        return .move(to: .init(x, self.navigationNode.position.y, self.navigationNode.position.z), duration: 0.2)
+        let action = SCNAction.move(to: .init(x, self.navigationNode.position.y, self.navigationNode.position.z), duration: 0.3)
+        action.timingMode = .easeOut
+        return action
     }
     
     var goOutAction: SCNAction {
