@@ -53,12 +53,21 @@ final class MainViewModel: ViewModelProtocol {
     var output: Output
     var input: Input
 
+    let headerModel: HeaderItemModel
+
     let collectionViewContainer: CollectionViewContainer
 
     init() {
         self.output = Output()
         self.input = Input()
 
-        self.collectionViewContainer = CollectionViewContainer(dataSources: [])
+        self.headerModel = HeaderItemModel(data: .init())
+        let dataSource = HeaderDataSource(model: headerModel)
+        self.collectionViewContainer = CollectionViewContainer(
+            dataSources:
+                [
+                    dataSource
+                ]
+        )
     }
 }

@@ -15,6 +15,7 @@ final class MainView: UIView, CollectionViewHolderProtocol {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        self.backgroundColor = UIColor(hex: "E5E5E5")
         self.setupInitialLayout()
     }
     

@@ -39,6 +39,7 @@
 		23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AC2556E3A9008DF7D7 /* MainViewController.swift */; };
 		23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */; };
 		23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */; };
+		23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		23B538AC2556E3A9008DF7D7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemViewData.swift; sourceTree = "<group>"; };
 		23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemModel.swift; sourceTree = "<group>"; };
+		23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDataSource.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -324,6 +326,7 @@
 				23B538A42556E29A008DF7D7 /* MainView.swift */,
 				23B538A82556E30B008DF7D7 /* MainViewModel.swift */,
 				23B538AC2556E3A9008DF7D7 /* MainViewController.swift */,
+				23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
 				23B538742556CF1C008DF7D7 /* UICollectionView+Reusable.swift in Sources */,
 				23B538902556DC13008DF7D7 /* LookAtSpendingItemView.swift in Sources */,
+				23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */,
 				2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */,
 				2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */,
 			);

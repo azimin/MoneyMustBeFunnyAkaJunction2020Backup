@@ -110,7 +110,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
             make.top.equalTo(stackView.snp.bottom).offset(49)
             make.width.equalToSuperview().multipliedBy(0.54)
             make.height.equalTo(128)
-            make.bottom.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview()
         }
 
         self.addSubview(self.showInARButton)

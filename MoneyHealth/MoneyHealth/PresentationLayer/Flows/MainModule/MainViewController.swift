@@ -14,6 +14,10 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
 
     let viewModel: MainViewModel
 
+    override func loadView() {
+        self.view = MainView()
+    }
+
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
         
