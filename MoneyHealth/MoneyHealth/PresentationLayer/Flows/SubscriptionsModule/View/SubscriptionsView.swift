@@ -23,6 +23,7 @@ final class SubscriptionsView: UIView, CollectionViewHolderProtocol {
     }
 
     private func setupInitialLayout() {
+        self.backgroundColor = .init(hex: "F5F7FA")
         self.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

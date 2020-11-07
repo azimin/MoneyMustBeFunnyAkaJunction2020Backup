@@ -23,13 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
         tabBarController.tabBar.tintColor = .init(hex: "1A1A1A")
         tabBarController.tabBar.unselectedItemTintColor = .init(hex: "D1D1D1")
-        tabBarController.viewControllers = [mainVC, subscriptionsVC]
+        tabBarController.viewControllers = [
+            mainVC,
+            NavigationViewController.init(rootViewController: subscriptionsVC)
+        ]
 
         let appearance = tabBarController.tabBar.standardAppearance
         appearance.configureWithOpaqueBackground()
         appearance.shadowImage = nil
         appearance.shadowColor = nil
-        appearance.backgroundColor = nil
+        appearance.backgroundColor = .white
         tabBarController.tabBar.standardAppearance = appearance
 
         window = UIWindow(frame: UIScreen.main.bounds)
