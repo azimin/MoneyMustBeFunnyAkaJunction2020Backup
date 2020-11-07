@@ -7,8 +7,10 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ReusableView {
     let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Look at your spendings"
@@ -65,4 +67,27 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        self.items[indexPath.row].onTap?()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 132, height: 180)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+}
+
+extension Reactive where Base: LookAtSpendingItemView {
+
+    var items: Binder<[SpendingItemModel]> {
+        return Binder(self.base) { view, items in
+            view.items = items
+            view.collectionView.reloadData()
+        }
+    }
 }
