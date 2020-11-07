@@ -19,4 +19,6 @@ struct UserModel: Decodable {
 
     let user_balance: Double
     let user_month_subscribtion_payment: Double?
+    let user_spend_this_month: Double?
+    let spend_change: Double?
 }

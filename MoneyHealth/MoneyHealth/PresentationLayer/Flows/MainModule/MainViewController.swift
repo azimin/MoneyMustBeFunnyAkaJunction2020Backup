@@ -49,18 +49,21 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         let balance = try! APIService.shared.userBalance.value()
         let helthScore = try! APIService.shared.userHealth.value()
 
+        let user = (try? APIService.shared.user.value()) ?? UserModel(user_name: "", user_health: 4.5, user_avatar_url: "", user_balance: 2500, user_month_subscribtion_payment: 0, user_spend_this_month: 200, spend_change: 0.2)
+
         let healthView = HealthView(
-            healthScore: helthScore,
-            balance: balance,
+            healthScore: user.user_health,
+            balance: user.user_balance,
             period: .month,
-            periodSpend: 500,
-            periodSpendChange: 0.5
+            periodSpend: user.user_spend_this_month ?? 0,
+            periodSpendChange: user.spend_change ?? 0
         )
         
         healthView.snp.makeConstraints { make in
-            make.width.equalTo(224)
+            make.width.equalTo(260)
             make.height.equalTo(221)
         }
+        healthView.layoutIfNeeded()
 
         let image = imageWithView(view: healthView)
 

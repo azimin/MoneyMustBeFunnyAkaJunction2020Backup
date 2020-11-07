@@ -12,6 +12,8 @@ import Alamofire
 
 class APIService {
 
+    let user = BehaviorSubject<UserModel?>(value: nil)
+
     let userName = BehaviorSubject<String>(value: "")
     let userHealth = BehaviorSubject<Double>(value: 0)
     let userAvatarURL = BehaviorSubject<URL?>(value: nil)
@@ -37,6 +39,8 @@ class APIService {
                 if let avatarURL = URL(string: person.userAvatatFullUrl) {
                     self?.userAvatarURL.onNext(avatarURL)
                 }
+
+                self?.user.onNext(person)
                 
                 self?.userBalance.onNext(person.user_balance)
                 self?.subscrptionPayment.onNext(person.user_month_subscribtion_payment)
@@ -56,7 +60,10 @@ class APIService {
                 "http://195.91.231.34:5000/user/insides/\(id)/last/\(period.rawValue)",
                 method: .get
             ).responseJSON { [weak self] json in
-                let parsedData = try! JSONSerialization.jsonObject(with: json.data!, options: .mutableLeaves) as! [String: AnyObject]
+                guard let jsonData = json.data else {
+                    return
+                }
+                let parsedData = try! JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves) as! [String: AnyObject]
                 
                 let brand = parsedData["more_of_brand"] as! [String: AnyObject]
                 let category = parsedData["more_of_category"] as! [String: AnyObject]

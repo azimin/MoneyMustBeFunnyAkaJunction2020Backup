@@ -20,6 +20,7 @@ final class HealthView: UIView {
     let healthScoreLabel: UILabel = {
        let label = UILabel()
         label.textColor = .white
+        label.adjustsFontSizeToFitWidth = true
         label.font = .systemFont(ofSize: 24, weight: .bold)
         return label
     }()
@@ -56,6 +57,11 @@ final class HealthView: UIView {
     let totalSpending = UILabel()
     let spendingsChangeLabel = UILabel()
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.helthContanerView.layer.cornerRadius = self.helthContanerView.bounds.width / 2
+    }
+
     init(
         healthScore: Double,
         balance: Double,
@@ -85,13 +91,6 @@ final class HealthView: UIView {
                 .font: UIFont.systemFont(ofSize: 15, weight: .medium)
             ]
         ))
-    
-        let upImageAttachment = NSTextAttachment()
-        upImageAttachment.image = UIImage(named: "Up")
-        upImageAttachment.bounds = .init(x: 0, y: 0, width: 10, height: 10)
-        let upAttachString = NSAttributedString(attachment: upImageAttachment)
-
-        attributedString.append(upAttachString)
 
         attributedString.append(.init(
             string: "\u{00a0}",
@@ -115,24 +114,16 @@ final class HealthView: UIView {
         self.totalSpending.attributedText = attributedString
         
         let spendingsAttributedString = NSMutableAttributedString(
-            string: "Spendings",
+            string: "",
             attributes:
                 [
                     .foregroundColor: UIColor.white,
                     .font: UIFont.systemFont(ofSize: 13, weight: .bold)
                 ]
         )
-
-        spendingsAttributedString.append(.init(
-            string: "\u{00a0}",
-            attributes: [
-                .foregroundColor: UIColor.white,
-                .font: UIFont.systemFont(ofSize: 15, weight: .medium)
-            ]
-        ))
     
         let downImageAttachment = NSTextAttachment()
-        downImageAttachment.image = UIImage(named: "Down")
+        downImageAttachment.image = periodSpendChange > 0 ? UIImage(named: "Up") : UIImage(named: "Down")
         downImageAttachment.bounds = .init(x: 0, y: 0, width: 10, height: 10)
         let downAttachString = NSAttributedString(attachment: downImageAttachment)
 
@@ -148,16 +139,16 @@ final class HealthView: UIView {
 
         spendingsAttributedString.append(
             .init(
-                string: String(format: "%.2f%", periodSpendChange),
+                string: String(format: "%.2f%%", periodSpendChange * 100),
                 attributes:
                     [
-                        .foregroundColor: UIColor(hex: "1ED760"),
+                        .foregroundColor: periodSpendChange > 0 ? UIColor(hex: "1ED760") : UIColor.red,
                         .font: UIFont.systemFont(ofSize: 13, weight: .bold)
                     ]
             )
         )
         
-        self.spendingsChangeLabel.attributedText = attributedString
+        self.spendingsChangeLabel.attributedText = spendingsAttributedString
         
         self.setupInitialLayout()
     }
@@ -169,14 +160,15 @@ final class HealthView: UIView {
     func setupInitialLayout() {
         self.addSubview(self.helthContanerView)
         self.helthContanerView.snp.makeConstraints { make in
-            make.size.equalTo(54)
             make.leading.top.equalToSuperview()
+            make.width.equalTo(self.helthContanerView.snp.height)
         }
 
         self.helthContanerView.addSubview(self.healthScoreLabel)
         self.healthScoreLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.leading.equalToSuperview().inset(12)
+            make.top.equalToSuperview().inset(12)
         }
         
         self.addSubview(self.titleLabel)
@@ -191,29 +183,36 @@ final class HealthView: UIView {
             make.top.equalTo(self.helthContanerView.snp.bottom).offset(36)
         }
 
-        self.addSubview(balanceLabel)
-        self.balanceLabel.snp.makeConstraints { make in
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        stackView.alignment = .leading
+        stackView.distribution = .fill
+
+        stackView.addArrangedSubview(self.balanceLabel)
+        stackView.addArrangedSubview(self.periodLabel)
+
+        self.addSubview(stackView)
+        stackView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(self.titleBalanceLabel.snp.bottom).offset(36)
+            make.centerY.equalToSuperview()
         }
         
         self.addSubview(periodLabel)
         self.periodLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(self.balanceLabel.snp.bottom).offset(28)
+            make.top.equalTo(self.balanceLabel.snp.bottom).offset(16)
         }
 
         self.addSubview(self.totalSpending)
         self.totalSpending.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(3)
-            make.top.equalTo(self.periodLabel.snp.bottom).offset(8)
             make.bottom.equalToSuperview()
         }
 
         self.addSubview(self.spendingsChangeLabel)
         self.spendingsChangeLabel.snp.makeConstraints { make in
-            make.leading.equalTo(self.totalSpending.snp.trailing).offset(3)
-            make.top.equalTo(self.periodLabel.snp.bottom).offset(8)
+            make.leading.equalTo(self.totalSpending.snp.trailing).offset(20)
             make.bottom.equalToSuperview()
         }
     }
