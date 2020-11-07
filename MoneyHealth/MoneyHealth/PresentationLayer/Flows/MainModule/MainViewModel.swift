@@ -5,7 +5,7 @@
 //  Created by Egor Petrov on 07.11.2020.
 //
 
-import Foundation
+import UIKit
 
 protocol AnyViewModelProtocol {
     func viewLoaded()
@@ -56,6 +56,8 @@ final class MainViewModel: ViewModelProtocol {
     let headerModel: HeaderItemModel
     let spendingsItemModel: LookAtSpendingsItemModel
 
+    let popularCategoriesDS: PopularCategoriesDatasource
+
     let collectionViewContainer: CollectionViewContainer
 
     init() {
@@ -71,12 +73,15 @@ final class MainViewModel: ViewModelProtocol {
         
         let titleDS = TitleDataSource()
 
+        self.popularCategoriesDS = PopularCategoriesDatasource()
+
         self.collectionViewContainer = CollectionViewContainer(
             dataSources:
                 [
                     dataSource,
                     spendingsDS,
-                    titleDS
+                    titleDS,
+                    popularCategoriesDS
                 ]
         )
 
@@ -91,5 +96,31 @@ final class MainViewModel: ViewModelProtocol {
         }
 
         self.spendingsItemModel.items.onNext(models)
+
+        let dummyCategories = [
+            PopularCategoryItemViewData(
+                categoryImage: UIImage(named: "1")!,
+                iconColor: UIColor(hex: "FF5A36"),
+                categoryTitle: "Grocery",
+                periodTitle: "From last week",
+                tendency: 25,
+                amount: 323.15
+            ),
+            PopularCategoryItemViewData(
+                categoryImage: UIImage(named: "2")!,
+                iconColor: UIColor(hex: "27D086"),
+                categoryTitle: "Home",
+                periodTitle: "From last week",
+                tendency: -30,
+                amount: 100
+            ),
+        ]
+
+        let categoryModels = dummyCategories.map {
+            PopularCategoryItemModel(data: $0)
+        }
+        
+
+        self.popularCategoriesDS.items = categoryModels
     }
 }
