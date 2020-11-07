@@ -75,5 +75,17 @@ final class MainViewModel: ViewModelProtocol {
                     spendingsDS
                 ]
         )
+
+        let dummyItems = [
+            SpendingViewData(title: "Hello", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
+            SpendingViewData(title: "Guys", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
+            SpendingViewData(title: "How are you", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
+        ]
+
+        let models = dummyItems.map {
+            SpendingItemModel(data: $0)
+        }
+
+        self.spendingsItemModel.items.onNext(models)
     }
 }

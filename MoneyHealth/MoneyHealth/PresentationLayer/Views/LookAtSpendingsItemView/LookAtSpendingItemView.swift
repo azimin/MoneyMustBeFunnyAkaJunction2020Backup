@@ -34,11 +34,21 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        self.collectionView.backgroundColor = UIColor(hex: "E5E5E5")
+        self.collectionView.showsHorizontalScrollIndicator = false
+
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return
         }
 
         layout.scrollDirection = .horizontal
+
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+
+        self.setupInitialLayout()
+
+        self.collectionView.registerReusableCellWithClass(GenericCollectionViewCell<SpendingView>.self)
     }
     
     required init?(coder: NSCoder) {
@@ -56,6 +66,7 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
         self.collectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.height.equalTo(180)
+            make.trailing.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
         }

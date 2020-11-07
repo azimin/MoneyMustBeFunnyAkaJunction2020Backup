@@ -32,13 +32,21 @@ final class SpendingView: UIView, GenericConfigurableCellComponent {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        self.backgroundColor = UIColor(hex: "E5E5E5")
+
         self.setupInitialLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+
+        superview?.layer.cornerRadius = 20
+        superview?.layer.masksToBounds = true
+    }
     
     private func setupInitialLayout() {
         self.addSubview(self.imageView)
