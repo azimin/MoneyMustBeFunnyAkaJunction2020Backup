@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Period: St {
+enum Period: String {
     case week
     case month
     case year

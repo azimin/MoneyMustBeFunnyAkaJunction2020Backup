@@ -11,10 +11,13 @@ import RxSwift
 import RxCocoa
 
 final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
+    
     typealias ViewData = MostSpendItemViewData
     typealias Model = MostSpendItemModel
 
     var disposeBag = DisposeBag()
+
+    var model: MostSpendItemModel?
 
     let iconImageView = UIImageView()
 
