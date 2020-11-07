@@ -24,6 +24,10 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func loadView() {
+        self.view = SubscriptionsView()
+    }
+
     func bindOutput() {
     }
 
