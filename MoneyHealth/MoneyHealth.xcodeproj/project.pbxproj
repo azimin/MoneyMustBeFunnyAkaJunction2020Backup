@@ -10,6 +10,7 @@
 		2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9325569FDA00E049B8 /* Transaction.swift */; };
 		2317FE982556A03500E049B8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE972556A03500E049B8 /* Category.swift */; };
 		2317FE9B2556A04A00E049B8 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9A2556A04A00E049B8 /* Month.swift */; };
+		2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */; };
 		234A7CB22555514000620B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB12555514000620B81 /* AppDelegate.swift */; };
 		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
 		234A7CB92555514000620B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CB72555514000620B81 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		2317FE9325569FDA00E049B8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2317FE972556A03500E049B8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2317FE9A2556A04A00E049B8 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSpendAmount.swift; sourceTree = "<group>"; };
 		234A7CAE2555514000620B81 /* MoneyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A7CB12555514000620B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A7CB52555514000620B81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +54,28 @@
 		2317FE9225569FD100E049B8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2317FE9E2556A18B00E049B8 /* PostProcessedModels */,
+				2317FE9D2556A17B00E049B8 /* PreprocessingModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2317FE9D2556A17B00E049B8 /* PreprocessingModels */ = {
+			isa = PBXGroup;
+			children = (
 				2317FE9325569FDA00E049B8 /* Transaction.swift */,
 				2317FE972556A03500E049B8 /* Category.swift */,
 				2317FE9A2556A04A00E049B8 /* Month.swift */,
 			);
-			path = Models;
+			path = PreprocessingModels;
+			sourceTree = "<group>";
+		};
+		2317FE9E2556A18B00E049B8 /* PostProcessedModels */ = {
+			isa = PBXGroup;
+			children = (
+				2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */,
+			);
+			path = PostProcessedModels;
 			sourceTree = "<group>";
 		};
 		234A7CA52555514000620B81 = {
@@ -160,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
+				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
 				234A7CB22555514000620B81 /* AppDelegate.swift in Sources */,
 				2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
