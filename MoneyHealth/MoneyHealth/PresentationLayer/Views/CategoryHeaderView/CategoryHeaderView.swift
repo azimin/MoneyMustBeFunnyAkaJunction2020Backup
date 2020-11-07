@@ -40,6 +40,3 @@ final class CategoryHeaderView: UIView, GenericCellSubview {
 
     }
 }
-
-
-
