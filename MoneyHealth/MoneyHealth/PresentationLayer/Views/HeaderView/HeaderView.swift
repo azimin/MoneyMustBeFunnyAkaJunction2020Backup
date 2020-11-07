@@ -47,9 +47,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
         return button
     }()
 
-    let balanceView = BalanceView()
-
-    let showInARButton = ShowSpendsInAR()
+    let spendingsAndButtonView = SpendingsAndButtonView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,21 +102,12 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
             make.trailing.lessThanOrEqualToSuperview().inset(8)
         }
 
-        self.addSubview(self.balanceView)
-        self.balanceView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(15)
+        self.addSubview(self.spendingsAndButtonView)
+        self.spendingsAndButtonView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(stackView.snp.bottom).offset(49)
-            make.width.equalToSuperview().multipliedBy(0.54)
             make.height.equalTo(128)
             make.bottom.equalToSuperview()
-        }
-
-        self.addSubview(self.showInARButton)
-        self.showInARButton.snp.makeConstraints { make in
-            make.leading.equalTo(self.balanceView.snp.trailing).offset(16)
-            make.top.equalTo(stackView.snp.bottom).offset(49)
-            make.height.equalTo(128)
-            make.trailing.equalToSuperview().inset(16)
         }
     }
 
@@ -143,7 +132,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
 
         model.balance
             .map { return "$\($0)" }
-            .bind(to: self.balanceView.balanceLabel.rx.text)
+            .bind(to: self.spendingsAndButtonView.balanceView.balanceLabel.rx.text)
             .disposed(by: self.disposeBag)
         
         model.rating
