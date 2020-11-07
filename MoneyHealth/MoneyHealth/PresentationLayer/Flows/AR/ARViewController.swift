@@ -116,8 +116,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             tabNode.opacity = 0
             tabNode.scale = .init(0.6, 0.6, 0.6)
             tabNode.rotation.x = .pi / 3
-            tabNode.position.z = -0.15
-            tabNode.position.x = -0.20
+            tabNode.position.z = -0.10
+            tabNode.position.x = -0.14
             tabNode.runAction(self.tabPresentationAction)
             node.addChildNode(tabNode)
         }

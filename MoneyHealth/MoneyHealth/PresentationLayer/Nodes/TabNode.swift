@@ -49,7 +49,7 @@ class TabNode: SCNNode {
         chartNode.eulerAngles.x = .pi / 18
         self.addChildNode(chartNode)
         
-        let fakeBalance1 = SCNPlane(width: 0.05 * 3.13, height: 0.05)
+        let fakeBalance1 = SCNPlane(width: 0.08, height: 0.08 * 1.2)
         fakeBalance1.firstMaterial?.diffuse.contents = UIImage(named: "subscription")
         let fakeBalanceNode1 = SCNNode(geometry: fakeBalance1)
         fakeBalanceNode1.eulerAngles.x = -.pi / 2
