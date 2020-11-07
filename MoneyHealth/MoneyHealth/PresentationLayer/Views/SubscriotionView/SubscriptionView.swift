@@ -8,14 +8,6 @@
 import UIKit
 import SnapKit
 
-struct SubscriotionViewConfig {
-    var name: String
-    var category: String
-    var price: CGFloat
-    var color: String
-    var icon: UIImage
-}
-
 final class SubscriptionView: UIView, GenericCellSubview {
 
     init() {
