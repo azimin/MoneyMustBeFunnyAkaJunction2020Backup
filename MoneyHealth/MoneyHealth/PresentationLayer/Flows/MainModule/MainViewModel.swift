@@ -107,32 +107,6 @@ final class MainViewModel: ViewModelProtocol {
         }
 
         self.spendingsItemModel.items.onNext(models)
-
-        let dummyCategories = [
-            PopularCategoryItemViewData(
-                categoryImage: UIImage(named: "1")!,
-                iconColor: UIColor(hex: "FF5A36"),
-                categoryTitle: "Grocery",
-                periodTitle: "From last week",
-                tendency: 25,
-                amount: 323.15
-            ),
-            PopularCategoryItemViewData(
-                categoryImage: UIImage(named: "2")!,
-                iconColor: UIColor(hex: "27D086"),
-                categoryTitle: "Home",
-                periodTitle: "From last week",
-                tendency: -30,
-                amount: 100
-            ),
-        ]
-
-        let categoryModels = dummyCategories.map {
-            PopularCategoryItemModel(data: $0)
-        }
-        
-
-        self.popularCategoriesDS.items = categoryModels
     
         self.apiService
             .userAvatarURL
@@ -160,6 +134,12 @@ final class MainViewModel: ViewModelProtocol {
         self.apiService.getBehavior(byId: 1, for: Date(), period: .month)
             .subscribe(onSuccess: { [weak self] in
                 self?.behaviorDS.model.items.onNext($0)
+            })
+            .disposed(by: self.disposeBag)
+
+        self.apiService.getCategories(byId: 1, for: Date(), period: .month)
+            .subscribe(onSuccess: { [weak self] in
+                self?.popularCategoriesDS.items = $0
             })
             .disposed(by: self.disposeBag)
     }

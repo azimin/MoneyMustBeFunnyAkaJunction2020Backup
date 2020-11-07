@@ -95,5 +95,41 @@ class APIService {
             return Disposables.create()
         }
     }
+
+    func getCategories(byId id: Int, for date: Date, period: Period) -> Single<[PopularCategoryItemModel]> {
+        return Single<[PopularCategoryItemModel]>.create { single in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            formatter.locale = Locale.current
+            let dateString = formatter.string(from: date)
+
+            AF.request(
+                "http://195.91.231.34:5000/user/popular_categories/\(id)/2016-11-07/\(period.rawValue)",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let decoder = JSONDecoder()
+                let categories = try! decoder.decode([PopularCategoryModel].self, from: json.data!)
+
+                let data = categories.map {
+                    return PopularCategoryItemViewData(
+                        categoryImage: UIImage(named: String($0.image_name.split(separator: ".")[0]))!,
+                        iconColor: .green,
+                        categoryTitle: $0.name,
+                        periodTitle: period.rawValue,
+                        tendency: $0.change,
+                        amount: $0.amount
+                    )
+                }
+
+                let models = data.map {
+                    return PopularCategoryItemModel(data: $0)
+                }
+                
+                single(.success(models))
+            }
+            return Disposables.create()
+        }
+    }
 }
 
