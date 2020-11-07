@@ -22,6 +22,8 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         self.viewModel = viewModel
         
         super.init(container: viewModel.collectionViewContainer)
+
+        self.tabBarItem = .init(title: "Reccomendations", image: UIImage(named: "tab_bar_reccomendations"), selectedImage: nil)
     }
     
     required init?(coder _: NSCoder) {
