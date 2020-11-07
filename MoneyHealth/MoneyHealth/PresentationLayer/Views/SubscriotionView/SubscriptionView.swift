@@ -16,7 +16,7 @@ struct SubscriotionViewConfig {
     var icon: UIImage
 }
 
-final class SubscriptionView: UIView {
+final class SubscriptionView: UIView, GenericCellSubview {
 
     let serviceImageView = UIImageView()
 
@@ -111,8 +111,8 @@ final class SubscriptionView: UIView {
         }
     }
 
-    func setup(config: SubscriotionViewConfig) {
-        let color = UIColor(hex: config.color)
+    func setup(config: SubscriptionModel) {
+        let color = UIColor(hex: config.backgroundColor)
         self.backgroundColor = color
 
         let whiteContrast = color.contrastRatio(with: UIColor.white)
@@ -127,7 +127,7 @@ final class SubscriptionView: UIView {
         self.serviceNameLabel.text = "\(config.name)"
         self.serviceCategoryLabel.text = "\(config.category)"
         
-        self.serviceImageView.image = config.icon
+        self.serviceImageView.image = UIImage(named: config.imageName)
     }
 }
 
