@@ -10,7 +10,7 @@ import SnapKit
 
 class ViewController: UIViewController {
 
-    let progressView = ProgressView()
+    let progressView = ImageViewWithProgress()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,10 @@ class ViewController: UIViewController {
         self.view.addSubview(self.progressView)
         self.progressView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(100)
+            make.size.equalTo(118)
         }
+
+        progressView.currentProgress = 0.5
     }
 }
 
