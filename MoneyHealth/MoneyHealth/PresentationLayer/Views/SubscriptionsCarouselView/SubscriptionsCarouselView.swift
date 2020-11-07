@@ -29,6 +29,23 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        self.items = [
+            .init(id: "1",
+                  name: "Spotify",
+                  category: "Music",
+                  imageName: "Spotify",
+                  backgroundColor: "000000",
+                  price: 9.99
+            ),
+            .init(id: "1",
+                  name: "Netflix",
+                  category: "Steaming",
+                  imageName: "Netflix",
+                  backgroundColor: "FFFFFF",
+                  price: 9.99
+            )
+        ]
+
         self.collectionView.backgroundColor = .clear
         self.collectionView.showsHorizontalScrollIndicator = false
 
@@ -43,7 +60,7 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
 
         self.setupInitialLayout()
 
-        self.collectionView.registerReusableCellWithClass(GenericCollectionViewCell<SpendingView>.self)
+        self.collectionView.registerReusableCellWithClass(GenericCollectionViewCell<SubscriptionView>.self)
     }
 
     required init?(coder: NSCoder) {
@@ -58,9 +75,10 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
         }
 
         self.addSubview(self.collectionView)
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         self.collectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.height.equalTo(180)
+            make.leading.equalToSuperview()
+            make.height.equalTo(100)
             make.trailing.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
@@ -86,7 +104,7 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 132, height: 180)
+        return CGSize(width: 220, height: 100)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

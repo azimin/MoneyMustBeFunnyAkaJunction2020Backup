@@ -18,6 +18,11 @@ struct SubscriotionViewConfig {
 
 final class SubscriptionView: UIView, GenericCellSubview {
 
+    init() {
+        super.init(frame: .zero)
+        self.setupInitialLayout()
+    }
+
     let serviceImageView = UIImageView()
 
     let currencyLabel: UILabel = {

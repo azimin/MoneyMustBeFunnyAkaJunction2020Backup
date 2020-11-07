@@ -50,7 +50,7 @@ final class UpCommingSubscriptionsDataSource: CollectionViewDataSource {
     ) -> CGSize {
         return CGSize(
             width: self.collectionView.frame.width,
-            height: self.collectionView.frame.height / 2
+            height: 154
         )
     }
 
