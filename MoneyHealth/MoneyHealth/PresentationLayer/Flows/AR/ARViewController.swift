@@ -4,6 +4,8 @@ import UIKit
 import Vision
 
 class ViewController: UIViewController, ARSCNViewDelegate {
+
+    var isTransitionInProgress = false
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -190,14 +192,17 @@ extension ViewController: ARSessionDelegate {
         }
         
         if velocities.count > 3 {
-            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.025 {
+            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.015, self.isTransitionInProgress == false {
                 print("shake!!!")
                 self.velocities.removeAll()
                 self.lastRotation = nil
-                
+
+                self.isTransitionInProgress = true
                 let tabNode = (node.childNodes.first { $0 as? TabNode != nil } as! TabNode)
                 tabNode.next()
-                tabNode.runAction(self.tabChangeAction)
+                tabNode.runAction(self.tabChangeAction) {
+                    self.isTransitionInProgress = false
+                }
             }
         }
         
