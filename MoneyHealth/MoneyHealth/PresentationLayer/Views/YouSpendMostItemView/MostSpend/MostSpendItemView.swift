@@ -7,8 +7,14 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
-final class MostSpendItemView: UIView {
+final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
+    typealias ViewData = MostSpendItemViewData
+    typealias Model = MostSpendItemModel
+
+    var disposeBag = DisposeBag()
 
     let iconImageView = UIImageView()
 
@@ -115,6 +121,10 @@ final class MostSpendItemView: UIView {
             make.top.equalTo(self.iconImageView.snp.bottom).offset(16)
         }
 
+        self.directionImageView.snp.makeConstraints { make in
+            make.size.equalTo(10)
+        }
+
         self.addSubview(self.comparedLabel)
         self.comparedLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
@@ -122,5 +132,31 @@ final class MostSpendItemView: UIView {
             make.trailing.lessThanOrEqualToSuperview().inset(16)
             make.bottom.equalToSuperview().inset(21)
         }
+    }
+
+    func configure(with model: MostSpendItemModel) {
+        self.iconImageView.image = model.data.icon
+        self.amountLabel.text = String(format: "$ %.2f", model.data.amount)
+    
+        if model.data.numberOfTransactions == 1 {
+            self.transactionsLabel.text = "\(model.data.numberOfTransactions) transaction"
+        } else {
+            self.transactionsLabel.text = "\(model.data.numberOfTransactions) transactions"
+        }
+
+        if model.data.percent > 0 {
+            self.directionImageView.image = UIImage(named: "Up")
+            self.percentLabel.text = String(format: "%.2f%%", model.data.percent)
+            self.percentLabel.textColor = UIColor(hex: "1ED760")
+        } else {
+            self.directionImageView.image = UIImage(named: "Down")
+            self.percentLabel.text = String(format: "%.2f%%", model.data.percent)
+            self.percentLabel.textColor = UIColor(hex: "FF2D6C")
+        }
+
+        self.categoryLabel.text = model.data.category.rawValue
+        self.categoryLabel.textColor = UIColor(hex: "006F46")
+        
+        self.comparedLabel.text = "compared to the \(model.data.period)"
     }
 }
