@@ -1,0 +1,20 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "resources" : [
+    {
+      "filename" : "iPhone 4.7-inch.arreferenceimage"
+    },
+    {
+      "filename" : "iPhone 5.5-inch.arreferenceimage"
+    },
+    {
+      "filename" : "ist_card.arreferenceimage"
+    },
+    {
+      "filename" : "TINKOFF-2.arreferenceimage"
+    }
+  ]
+}

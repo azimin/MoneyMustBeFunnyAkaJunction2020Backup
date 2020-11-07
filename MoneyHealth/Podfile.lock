@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.0)
   - AnimatedGradientView (3.0.0)
+  - FittedSheets (2.2.2)
   - Nuke (9.1.2)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
@@ -13,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - AnimatedGradientView
+  - FittedSheets
   - Nuke
   - RxCocoa
   - RxSwift
@@ -22,6 +24,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AnimatedGradientView
+    - FittedSheets
     - Nuke
     - RxCocoa
     - RxRelay
@@ -31,12 +34,14 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AnimatedGradientView: 372cc08e6fcb25e6044196fd85e87d836439f63e
+  FittedSheets: e76647375838b856b7e7916021deb7e7e1527ecc
   Nuke: dd2e6be6a34c042a7861e190632781d11f253026
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: a2f3b06aa63cc5f63347e183ed591672feb44edf
+PODFILE CHECKSUM: d3fa6dd8fcff9bac7960a352e8fa1ab389c6863a
+
 
 COCOAPODS: 1.10.0

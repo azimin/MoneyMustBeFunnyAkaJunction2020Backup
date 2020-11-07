@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "iphone-4.7.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "inches",
+    "width" : 2.3010000000000002
+  }
+}

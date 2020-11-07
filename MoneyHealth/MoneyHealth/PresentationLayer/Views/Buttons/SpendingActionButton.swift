@@ -79,6 +79,7 @@ final class SpendingActionButton: UIControl {
         }
 
         self.addSubview(self.gradientView2)
+        self.gradientView2.isUserInteractionEnabled = false
         self.gradientView2.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

@@ -42,7 +42,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
         button.backgroundColor = UIColor(hex: "27D086")
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Improve", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 10, weight: .semibold)
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .semibold)
         button.layer.cornerRadius = 6
         return button
     }()
@@ -142,6 +142,16 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
             .map { return $0/5 }
             .subscribe(onNext: { [unowned self] in
                 self.avatarView.currentProgress = CGFloat($0)
+            })
+            .disposed(by: self.disposeBag)
+
+        self.spendingsAndButtonView.spendingActionButton.rx
+            .controlEvent(.touchUpInside)
+            .subscribe(onNext: {
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushAR"),
+                    object: nil
+                )
             })
             .disposed(by: self.disposeBag)
     }

@@ -9,6 +9,7 @@ target 'MoneyHealth' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'AnimatedGradientView'
+  pod 'FittedSheets'
   pod 'Alamofire', '~> 5.2'
 
   # Pods for MoneyHealth
