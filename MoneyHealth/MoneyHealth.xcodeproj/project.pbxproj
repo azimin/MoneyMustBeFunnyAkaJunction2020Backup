@@ -23,6 +23,10 @@
 		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
 		234A7CBB2555514100620B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBA2555514100620B81 /* Assets.xcassets */; };
 		234A7CBE2555514100620B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBC2555514100620B81 /* LaunchScreen.storyboard */; };
+		23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538672556CDC0008DF7D7 /* CollectionViewContainer.swift */; };
+		23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5386C2556CDE0008DF7D7 /* CollectionViewDataSource.swift */; };
+		23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5386F2556CE2D008DF7D7 /* ReusableView.swift */; };
+		23B538742556CF1C008DF7D7 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538732556CF1C008DF7D7 /* UICollectionView+Reusable.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,10 @@
 		234A7CBA2555514100620B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		234A7CBD2555514100620B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		234A7CBF2555514100620B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23B538672556CDC0008DF7D7 /* CollectionViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewContainer.swift; sourceTree = "<group>"; };
+		23B5386C2556CDE0008DF7D7 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		23B5386F2556CE2D008DF7D7 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		23B538732556CF1C008DF7D7 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +118,7 @@
 		2317FEAD2556B57500E049B8 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				23B538662556CDB6008DF7D7 /* Collections */,
 				2317FEAE2556B58E00E049B8 /* Views */,
 			);
 			path = PresentationLayer;
@@ -163,6 +172,7 @@
 		2317FEC32556B6D900E049B8 /* UIKIt */ = {
 			isa = PBXGroup;
 			children = (
+				23B538722556CF0D008DF7D7 /* UICollectionView */,
 				2317FEC42556B6DE00E049B8 /* UIColor */,
 			);
 			path = UIKIt;
@@ -230,6 +240,24 @@
 				234A7CBF2555514100620B81 /* Info.plist */,
 			);
 			path = MoneyHealth;
+			sourceTree = "<group>";
+		};
+		23B538662556CDB6008DF7D7 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				23B538672556CDC0008DF7D7 /* CollectionViewContainer.swift */,
+				23B5386C2556CDE0008DF7D7 /* CollectionViewDataSource.swift */,
+				23B5386F2556CE2D008DF7D7 /* ReusableView.swift */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		23B538722556CF0D008DF7D7 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				23B538732556CF1C008DF7D7 /* UICollectionView+Reusable.swift */,
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -364,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
+				23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */,
 				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */,
@@ -373,8 +402,11 @@
 				2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */,
 				2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
+				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
+				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
+				23B538742556CF1C008DF7D7 /* UICollectionView+Reusable.swift in Sources */,
 				2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */,
 				2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */,
 			);
