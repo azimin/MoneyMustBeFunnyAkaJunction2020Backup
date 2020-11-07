@@ -10,6 +10,7 @@ import UIKit
 struct PopularCategoryItemViewData: Hashable {
     
     let categoryImage: UIImage
+    let iconColor: UIColor
 
     let categoryTitle: String
     let periodTitle: String

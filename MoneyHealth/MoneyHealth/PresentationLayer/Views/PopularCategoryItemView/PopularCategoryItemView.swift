@@ -9,6 +9,29 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+final class CategoryImageView: UIView {
+
+    let iconImageView = UIImageView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        self.setupInitialLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupInitialLayout() {
+        self.addSubview(self.iconImageView)
+        self.iconImageView.snp.makeConstraints { make in
+            make.size.equalTo(20)
+            make.center.equalToSuperview()
+        }
+    }
+}
+
 final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
     typealias Model = PopularCategoryItemModel
     typealias ViewData = PopularCategoryItemViewData
@@ -17,7 +40,7 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
 
     var disposeBag = DisposeBag()
 
-    let iconImageView = UIImageView()
+    let iconImageView = CategoryImageView()
 
     let categoryTitleLabel: UILabel = {
        let label = UILabel()
@@ -58,6 +81,7 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
     }
     
     private func setupInitialLayout() {
+        self.iconImageView.layer.cornerRadius = 22
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints { make in
             make.size.equalTo(44)
@@ -93,19 +117,23 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
     }
 
     func configure(with model: Model) {
-        self.iconImageView.image = model.data.categoryImage
+        self.iconImageView.iconImageView.image = model.data.categoryImage
+        self.iconImageView.tintColor = .white
+        self.iconImageView.backgroundColor = model.data.iconColor
+
         self.categoryTitleLabel.text = model.data.categoryTitle
         self.periodLabel.text = model.data.periodTitle
 
         if model.data.tendency > 0 {
-            self.tendencyLabel.text = String(format: "%.2f%", model.data.tendency)
+            self.tendencyLabel.text = String(format: "%.2f%%", model.data.tendency)
             self.tendencyLabel.textColor = UIColor(hex: "1ED760")
         } else {
-            self.tendencyLabel.text = String(format: "-%.2f%", model.data.tendency)
+            self.tendencyLabel.text = String(format: "%.2f%%", model.data.tendency)
             self.tendencyLabel.textColor = .red
         }
 
-        let amount = String(format: "$%.2f", model.data.amount)
+        let amount = String(format: "$ %.2f", model.data.amount)
+        
         let parts = amount.split(separator: ".")
 
         let attributedString = NSMutableAttributedString(
@@ -115,8 +143,8 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
             ]
         )
 
-        let rangeOfFullPart = (amount as NSString).range(of: String(parts[0]))
-        let rangeOfDecimalPart = (amount as NSString).range(of: String(parts[1]))
+        let rangeOfFullPart = (attributedString.string as NSString).range(of: String(parts[0]))
+        let rangeOfDecimalPart = (attributedString.string as NSString).range(of: ".\(String(parts[1]))")
 
         attributedString.setAttributes(
             [
@@ -129,9 +157,15 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
             [
                 .font: UIFont.systemFont(ofSize: 18, weight: .regular)
             ],
-            range: NSRange(location: rangeOfDecimalPart.location - 1, length: rangeOfDecimalPart.length + 1)
+            range: NSRange(location: rangeOfDecimalPart.location, length: rangeOfDecimalPart.length)
         )
 
         self.amountLabel.attributedText = attributedString
+    }
+
+    func reuse() {
+        self.model?.reuse()
+        self.model = nil
+        self.amountLabel.attributedText = nil
     }
 }
