@@ -12,9 +12,10 @@
 		2317FE9B2556A04A00E049B8 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9A2556A04A00E049B8 /* Month.swift */; };
 		2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */; };
 		2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEA82556A8CD00E049B8 /* SpendingService.swift */; };
+		2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEBF2556B6B900E049B8 /* ProgressView.swift */; };
+		2317FEC62556B6F100E049B8 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEC52556B6F100E049B8 /* UIColor+Hex.swift */; };
 		234A7CB22555514000620B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB12555514000620B81 /* AppDelegate.swift */; };
 		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
-		234A7CB92555514000620B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CB72555514000620B81 /* Main.storyboard */; };
 		234A7CBB2555514100620B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBA2555514100620B81 /* Assets.xcassets */; };
 		234A7CBE2555514100620B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBC2555514100620B81 /* LaunchScreen.storyboard */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
@@ -27,10 +28,11 @@
 		2317FE9A2556A04A00E049B8 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSpendAmount.swift; sourceTree = "<group>"; };
 		2317FEA82556A8CD00E049B8 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
+		2317FEBF2556B6B900E049B8 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		2317FEC52556B6F100E049B8 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		234A7CAE2555514000620B81 /* MoneyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A7CB12555514000620B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A7CB52555514000620B81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		234A7CB82555514000620B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		234A7CBA2555514100620B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		234A7CBD2555514100620B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		234A7CBF2555514100620B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		2317FE9125569FCA00E049B8 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2317FEC22556B6D300E049B8 /* Extensions */,
 				2317FEA72556A6E900E049B8 /* Services */,
 				2317FE9225569FD100E049B8 /* Models */,
 			);
@@ -129,8 +132,33 @@
 		2317FEB62556B5DF00E049B8 /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
+				2317FEBF2556B6B900E049B8 /* ProgressView.swift */,
 			);
 			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		2317FEC22556B6D300E049B8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEC32556B6D900E049B8 /* UIKIt */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2317FEC32556B6D900E049B8 /* UIKIt */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEC42556B6DE00E049B8 /* UIColor */,
+			);
+			path = UIKIt;
+			sourceTree = "<group>";
+		};
+		2317FEC42556B6DE00E049B8 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEC52556B6F100E049B8 /* UIColor+Hex.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 		234A7CA52555514000620B81 = {
@@ -158,7 +186,6 @@
 				2317FE9125569FCA00E049B8 /* ApplicationLayer */,
 				234A7CB12555514000620B81 /* AppDelegate.swift */,
 				234A7CB52555514000620B81 /* ViewController.swift */,
-				234A7CB72555514000620B81 /* Main.storyboard */,
 				234A7CBA2555514100620B81 /* Assets.xcassets */,
 				234A7CBC2555514100620B81 /* LaunchScreen.storyboard */,
 				234A7CBF2555514100620B81 /* Info.plist */,
@@ -172,7 +199,6 @@
 				218BF6C200331D68D92A8B0C /* Pods-MoneyHealth.debug.xcconfig */,
 				5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -246,7 +272,6 @@
 			files = (
 				234A7CBE2555514100620B81 /* LaunchScreen.storyboard in Resources */,
 				234A7CBB2555514100620B81 /* Assets.xcassets in Resources */,
-				234A7CB92555514000620B81 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,8 +327,10 @@
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
 				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
+				2317FEC62556B6F100E049B8 /* UIColor+Hex.swift in Sources */,
 				234A7CB22555514000620B81 /* AppDelegate.swift in Sources */,
 				2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */,
+				2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
 			);
@@ -312,14 +339,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		234A7CB72555514000620B81 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				234A7CB82555514000620B81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		234A7CBC2555514100620B81 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
