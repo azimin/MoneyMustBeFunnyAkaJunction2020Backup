@@ -17,6 +17,8 @@ class APIService {
     let userAvatarURL = BehaviorSubject<URL?>(value: nil)
     let userBalance = BehaviorSubject<Double>(value: 0)
     let subscrptionPayment = BehaviorSubject<Double?>(value: nil)
+    
+    static let shared = APIService()
 
     func getUser(byID id: Int) {
         AF.request(

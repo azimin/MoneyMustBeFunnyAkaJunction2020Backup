@@ -39,6 +39,7 @@ final class TotalSubscriptionsDataSource: CollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SpendingsAndButtonView>.self, indexPath: indexPath)
+        cell.customSubview.configure()
         cell.customSubview.update(style: self.isAll ? .subscriptionsAll : .subscriptions)
         cell.customSubview.spendingActionButton.rx
             .controlEvent(.touchUpInside)
