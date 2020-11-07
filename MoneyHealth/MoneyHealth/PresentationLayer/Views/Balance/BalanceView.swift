@@ -13,6 +13,7 @@ final class BalanceView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
+        label.numberOfLines = 0
         label.textColor = UIColor.black.withAlphaComponent(0.7)
         label.text = "Total Balance"
         return label
@@ -42,7 +43,7 @@ final class BalanceView: UIView {
     private func setupInitialLayout() {
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.top.equalToSuperview().offset(16)
         }
 

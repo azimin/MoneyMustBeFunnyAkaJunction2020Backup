@@ -9,6 +9,22 @@ import UIKit
 import SnapKit
 
 final class SpendingActionButton: UIControl {
+    func update(style: SpendingsAndButtonView.Style) {
+        switch style {
+        case .subscriptions:
+            self.iconImageView.image = UIImage(named: "subscriptions_action")
+            self.titleLabel.text = "All Subscriptions"
+        case .main:
+            self.iconImageView.image = UIImage(named: "AR")
+            self.titleLabel.text = "Spendings in AR"
+        }
+    }
+
+    override var isHighlighted: Bool {
+        didSet {
+            self.alpha = isHighlighted ? 0.7 : 1.0
+        }
+    }
 
     let gradientView = UIImageView()
 
