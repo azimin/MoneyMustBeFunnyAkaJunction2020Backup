@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,18 +11,22 @@
 		2317FE982556A03500E049B8 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE972556A03500E049B8 /* Category.swift */; };
 		2317FE9B2556A04A00E049B8 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9A2556A04A00E049B8 /* Month.swift */; };
 		2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */; };
+		2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317FEA82556A8CD00E049B8 /* SpendingService.swift */; };
 		234A7CB22555514000620B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB12555514000620B81 /* AppDelegate.swift */; };
 		234A7CB62555514000620B81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234A7CB52555514000620B81 /* ViewController.swift */; };
 		234A7CB92555514000620B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CB72555514000620B81 /* Main.storyboard */; };
 		234A7CBB2555514100620B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBA2555514100620B81 /* Assets.xcassets */; };
 		234A7CBE2555514100620B81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 234A7CBC2555514100620B81 /* LaunchScreen.storyboard */; };
+		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		218BF6C200331D68D92A8B0C /* Pods-MoneyHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.debug.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		2317FE9325569FDA00E049B8 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2317FE972556A03500E049B8 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2317FE9A2556A04A00E049B8 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		2317FE9F2556A19F00E049B8 /* MonthSpendAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthSpendAmount.swift; sourceTree = "<group>"; };
+		2317FEA82556A8CD00E049B8 /* SpendingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingService.swift; sourceTree = "<group>"; };
 		234A7CAE2555514000620B81 /* MoneyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		234A7CB12555514000620B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		234A7CB52555514000620B81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		234A7CBA2555514100620B81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		234A7CBD2555514100620B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		234A7CBF2555514100620B81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
+		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,7 @@
 		2317FE9125569FCA00E049B8 /* ApplicationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				2317FEA72556A6E900E049B8 /* Services */,
 				2317FE9225569FD100E049B8 /* Models */,
 			);
 			path = ApplicationLayer;
@@ -78,11 +86,60 @@
 			path = PostProcessedModels;
 			sourceTree = "<group>";
 		};
+		2317FEA72556A6E900E049B8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEA82556A8CD00E049B8 /* SpendingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2317FEAD2556B57500E049B8 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEAE2556B58E00E049B8 /* Views */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		2317FEAE2556B58E00E049B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2317FEB62556B5DF00E049B8 /* ProgressView */,
+				2317FEB52556B5BC00E049B8 /* ImageView */,
+				2317FEAF2556B59300E049B8 /* HeaderView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2317FEAF2556B59300E049B8 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		2317FEB52556B5BC00E049B8 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		2317FEB62556B5DF00E049B8 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		234A7CA52555514000620B81 = {
 			isa = PBXGroup;
 			children = (
 				234A7CB02555514000620B81 /* MoneyHealth */,
 				234A7CAF2555514000620B81 /* Products */,
+				520A074D83EDD7594AB4DBC6 /* Pods */,
+				E56F3519003F500A4047E613 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +154,7 @@
 		234A7CB02555514000620B81 /* MoneyHealth */ = {
 			isa = PBXGroup;
 			children = (
+				2317FEAD2556B57500E049B8 /* PresentationLayer */,
 				2317FE9125569FCA00E049B8 /* ApplicationLayer */,
 				234A7CB12555514000620B81 /* AppDelegate.swift */,
 				234A7CB52555514000620B81 /* ViewController.swift */,
@@ -108,6 +166,24 @@
 			path = MoneyHealth;
 			sourceTree = "<group>";
 		};
+		520A074D83EDD7594AB4DBC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				218BF6C200331D68D92A8B0C /* Pods-MoneyHealth.debug.xcconfig */,
+				5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E56F3519003F500A4047E613 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 234A7CC22555514100620B81 /* Build configuration list for PBXNativeTarget "MoneyHealth" */;
 			buildPhases = (
+				5FDBA67DD7E2F9A1A5482643 /* [CP] Check Pods Manifest.lock */,
 				234A7CAA2555514000620B81 /* Sources */,
 				234A7CAB2555514000620B81 /* Frameworks */,
 				234A7CAC2555514000620B81 /* Resources */,
+				148DD6B69B707D219E613EDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +212,7 @@
 		234A7CA62555514000620B81 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
@@ -173,11 +252,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		148DD6B69B707D219E613EDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FDBA67DD7E2F9A1A5482643 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneyHealth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		234A7CAA2555514000620B81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
 				234A7CB62555514000620B81 /* ViewController.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
 				234A7CB22555514000620B81 /* AppDelegate.swift in Sources */,
@@ -260,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -315,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -327,12 +449,14 @@
 		};
 		234A7CC32555514100620B81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 218BF6C200331D68D92A8B0C /* Pods-MoneyHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6LW789JHQ;
 				INFOPLIST_FILE = MoneyHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,12 +470,14 @@
 		};
 		234A7CC42555514100620B81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G6LW789JHQ;
 				INFOPLIST_FILE = MoneyHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
