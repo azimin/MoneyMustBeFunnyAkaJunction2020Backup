@@ -12,8 +12,8 @@ import RxCocoa
 
 final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GenericConfigurableCellComponent {
 
-    typealias ViewData = LookAtSpendingsItemViewData
-    typealias Model = LookAtSpendingsItemModel
+    typealias ViewData = YouSpendMostItemViewData
+    typealias Model = YouSpendMostItemModel
 
     var model: Model?
 
@@ -29,12 +29,12 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
-    var items = [SpendingItemModel]()
+    var items = [MostSpendItemModel]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.collectionView.backgroundColor = UIColor(hex: "E5E5E5")
+        self.collectionView.backgroundColor = .init(hex: "F5F7FA")
         self.collectionView.showsHorizontalScrollIndicator = false
 
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
@@ -48,7 +48,7 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
 
         self.setupInitialLayout()
 
-        self.collectionView.registerReusableCellWithClass(GenericCollectionViewCell<SpendingView>.self)
+        self.collectionView.registerReusableCellWithClass(GenericCollectionViewCell<MostSpendItemView>.self)
     }
     
     required init?(coder: NSCoder) {
@@ -65,7 +65,7 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
         self.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.height.equalTo(180)
+            make.height.equalTo(138)
             make.trailing.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(24)
             make.bottom.equalToSuperview()
@@ -81,7 +81,7 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SpendingView>.self, indexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<MostSpendItemView>.self, indexPath: indexPath)
         cell.customSubview.configure(with: self.items[indexPath.row])
         return cell
     }
@@ -93,19 +93,19 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 257, height: 139)
+        return CGSize(width: 308, height: 138)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 16
     }
 
-    func configure(with model: LookAtSpendingsItemModel) {
+    func configure(with model: YouSpendMostItemModel) {
         self.model = model
         bindOutput(from: model)
     }
 
-    func bindOutput(from model: LookAtSpendingsItemModel) {
+    func bindOutput(from model: YouSpendMostItemModel) {
         model.items
             .bind(to: self.rx.items)
             .disposed(by: self.disposeBag)
@@ -114,7 +114,7 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
 
 extension Reactive where Base: YouSpendMostItemView {
 
-    var items: Binder<[SpendingItemModel]> {
+    var items: Binder<[MostSpendItemModel]> {
         return Binder(self.base) { view, items in
             view.items = items
             view.collectionView.reloadData()

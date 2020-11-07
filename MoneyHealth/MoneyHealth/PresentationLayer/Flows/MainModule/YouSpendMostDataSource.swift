@@ -1,5 +1,5 @@
 //
-//  PopularCategoriesDatasource.swift
+//  YouSpendMostDataSource.swift
 //  MoneyHealth
 //
 //  Created by Egor Petrov on 07.11.2020.
@@ -7,20 +7,20 @@
 
 import UIKit
 
-class PopularCategoriesDatasource: CollectionViewDataSource {
+class YouSpendMostDataSource: CollectionViewDataSource {
     weak var delegate: CollectionViewDataSourceContainerDelegate?
 
     var state = DataSourceState.items
     var isEnabled = true
 
-    var items = [PopularCategoryItemModel]() {
-        didSet {
-            self.collectionView.reloadData()
-        }
+    let model: YouSpendMostItemModel
+    
+    init(model: YouSpendMostItemModel) {
+        self.model = model
     }
 
     var cellsForRegistration: [CollectionViewCell.Type]? {
-        return [GenericCollectionViewCell<PopularCategoryItemView>.self]
+        return [GenericCollectionViewCell<YouSpendMostItemView>.self]
     }
 
     var numberOfSections: Int {
@@ -28,21 +28,12 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return items.count
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<PopularCategoryItemView>.self, indexPath: indexPath)
-        cell.customSubview.configure(with: self.items[indexPath.row])
-
-        if indexPath.row == 0 {
-            cell.customSubview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        } else if indexPath.row == self.items.count - 1 {
-            cell.customSubview.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        } else {
-            cell.customSubview.layer.maskedCorners = []
-        }
-
+        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<YouSpendMostItemView>.self, indexPath: indexPath)
+        cell.customSubview.configure(with: self.model)
         return cell
     }
 
@@ -53,7 +44,7 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: 88)
+        return CGSize(width: collectionView.frame.width, height: 205)
     }
 
     func collectionView(
@@ -73,9 +64,8 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 16, bottom: 0, right: 16)
+        return UIEdgeInsets(top: 31, left: 0, bottom: 0, right: 0)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}
 }
-

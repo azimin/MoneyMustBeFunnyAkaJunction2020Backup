@@ -88,7 +88,7 @@ class TitleDataSource: CollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 17, left: 0, bottom: 0, right: 0)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}

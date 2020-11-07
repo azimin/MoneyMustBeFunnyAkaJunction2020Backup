@@ -50,6 +50,11 @@
 		23B538D425570550008DF7D7 /* PopularCategoriesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538D325570550008DF7D7 /* PopularCategoriesDatasource.swift */; };
 		23B538DD25570DD5008DF7D7 /* YouSpendMostItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538DC25570DD5008DF7D7 /* YouSpendMostItemView.swift */; };
 		23B538E225570E81008DF7D7 /* MostSpendItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538E125570E81008DF7D7 /* MostSpendItemView.swift */; };
+		23B538E7255714AA008DF7D7 /* MostSpendItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538E6255714AA008DF7D7 /* MostSpendItemViewData.swift */; };
+		23B538EA255715A5008DF7D7 /* MostSpendItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538E9255715A5008DF7D7 /* MostSpendItemModel.swift */; };
+		23B538F625571AFC008DF7D7 /* YouSpendMostItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538F525571AFC008DF7D7 /* YouSpendMostItemModel.swift */; };
+		23B538F925571B21008DF7D7 /* YouSpendMostItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538F825571B21008DF7D7 /* YouSpendMostItemViewData.swift */; };
+		23B538FC2557292C008DF7D7 /* YouSpendMostDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538FB2557292C008DF7D7 /* YouSpendMostDataSource.swift */; };
 		9F22F485255709F3005F24B1 /* SpendingsAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */; };
 		9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */; };
 		9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4CC25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift */; };
@@ -125,6 +130,11 @@
 		23B538D325570550008DF7D7 /* PopularCategoriesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoriesDatasource.swift; sourceTree = "<group>"; };
 		23B538DC25570DD5008DF7D7 /* YouSpendMostItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostItemView.swift; sourceTree = "<group>"; };
 		23B538E125570E81008DF7D7 /* MostSpendItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSpendItemView.swift; sourceTree = "<group>"; };
+		23B538E6255714AA008DF7D7 /* MostSpendItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSpendItemViewData.swift; sourceTree = "<group>"; };
+		23B538E9255715A5008DF7D7 /* MostSpendItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSpendItemModel.swift; sourceTree = "<group>"; };
+		23B538F525571AFC008DF7D7 /* YouSpendMostItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostItemModel.swift; sourceTree = "<group>"; };
+		23B538F825571B21008DF7D7 /* YouSpendMostItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostItemViewData.swift; sourceTree = "<group>"; };
+		23B538FB2557292C008DF7D7 /* YouSpendMostDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostDataSource.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsAndButtonView.swift; sourceTree = "<group>"; };
@@ -419,6 +429,7 @@
 				23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */,
 				23B538CF2556FE90008DF7D7 /* TitleDataSource.swift */,
 				23B538D325570550008DF7D7 /* PopularCategoriesDatasource.swift */,
+				23B538FB2557292C008DF7D7 /* YouSpendMostDataSource.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -438,6 +449,8 @@
 			children = (
 				23B538E025570E6F008DF7D7 /* MostSpend */,
 				23B538DC25570DD5008DF7D7 /* YouSpendMostItemView.swift */,
+				23B538F525571AFC008DF7D7 /* YouSpendMostItemModel.swift */,
+				23B538F825571B21008DF7D7 /* YouSpendMostItemViewData.swift */,
 			);
 			path = YouSpendMostItemView;
 			sourceTree = "<group>";
@@ -446,6 +459,8 @@
 			isa = PBXGroup;
 			children = (
 				23B538E125570E81008DF7D7 /* MostSpendItemView.swift */,
+				23B538E6255714AA008DF7D7 /* MostSpendItemViewData.swift */,
+				23B538E9255715A5008DF7D7 /* MostSpendItemModel.swift */,
 			);
 			path = MostSpend;
 			sourceTree = "<group>";
@@ -742,6 +757,7 @@
 				9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* SpendingActionButton.swift in Sources */,
 				9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */,
+				23B538FC2557292C008DF7D7 /* YouSpendMostDataSource.swift in Sources */,
 				23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */,
 				23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */,
 				2317FEDD2556C29100E049B8 /* RatingView.swift in Sources */,
@@ -759,9 +775,11 @@
 				9F22F4EC25571559005F24B1 /* SubscriptionsListView.swift in Sources */,
 				9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */,
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
+				23B538EA255715A5008DF7D7 /* MostSpendItemModel.swift in Sources */,
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
 				A2ECAE1725572EB40032A8BD /* StatusViewController.swift in Sources */,
 				23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */,
+				23B538F625571AFC008DF7D7 /* YouSpendMostItemModel.swift in Sources */,
 				23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */,
 				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
 				9FB3AC802556FD2B005E243A /* NavigationViewController.swift in Sources */,
@@ -772,9 +790,11 @@
 				23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B538D425570550008DF7D7 /* PopularCategoriesDatasource.swift in Sources */,
+				23B538E7255714AA008DF7D7 /* MostSpendItemViewData.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
 				9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */,
 				9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */,
+				23B538F925571B21008DF7D7 /* YouSpendMostItemViewData.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				9F22F4ED25571559005F24B1 /* SubscriptionsListViewController.swift in Sources */,
 				9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */,

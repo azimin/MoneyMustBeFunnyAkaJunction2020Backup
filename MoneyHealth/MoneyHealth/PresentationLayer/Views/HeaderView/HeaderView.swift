@@ -42,7 +42,7 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
         button.backgroundColor = UIColor(hex: "27D086")
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Improve", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 10, weight: .semibold)
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .semibold)
         button.layer.cornerRadius = 6
         return button
     }()

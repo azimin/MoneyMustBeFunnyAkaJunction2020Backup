@@ -81,6 +81,9 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
     }
     
     private func setupInitialLayout() {
+        self.layer.cornerRadius = 20
+        self.backgroundColor = .white
+
         self.iconImageView.layer.cornerRadius = 22
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints { make in
@@ -148,14 +151,14 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
 
         attributedString.setAttributes(
             [
-                .font: UIFont.systemFont(ofSize: 24, weight: .bold)
+                .font: UIFont.systemFont(ofSize: 21, weight: .bold)
             ],
             range: rangeOfFullPart
         )
 
         attributedString.setAttributes(
             [
-                .font: UIFont.systemFont(ofSize: 18, weight: .regular)
+                .font: UIFont.systemFont(ofSize: 16, weight: .regular)
             ],
             range: NSRange(location: rangeOfDecimalPart.location, length: rangeOfDecimalPart.length)
         )
