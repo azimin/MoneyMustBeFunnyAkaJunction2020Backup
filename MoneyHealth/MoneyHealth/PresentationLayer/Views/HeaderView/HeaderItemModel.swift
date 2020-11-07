@@ -16,5 +16,4 @@ final class HeaderItemModel: GenericCellModel<HeaderView> {
     let rating = BehaviorSubject<Double>(value: 0.0)
     let balance = BehaviorSubject<Double>(value: 0.0)
 
-    
 }

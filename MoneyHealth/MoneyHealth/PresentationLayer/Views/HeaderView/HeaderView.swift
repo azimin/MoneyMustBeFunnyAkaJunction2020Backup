@@ -146,6 +146,16 @@ final class HeaderView: UIView, GenericConfigurableCellComponent {
                 self.avatarView.currentProgress = CGFloat($0)
             })
             .disposed(by: self.disposeBag)
+
+        self.spendingsAndButtonView.spendingActionButton.rx
+            .controlEvent(.touchUpInside)
+            .subscribe(onNext: {
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushAR"),
+                    object: nil
+                )
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 

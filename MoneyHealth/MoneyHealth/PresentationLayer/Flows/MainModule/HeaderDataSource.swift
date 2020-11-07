@@ -33,7 +33,7 @@ class HeaderDataSource: CollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<HeaderView>.self, indexPath: indexPath)
-//        cell.customSubview.configure(with: self.model)
+        cell.customSubview.configure(with: self.model)
         return cell
     }
 
