@@ -120,7 +120,7 @@ final class SubscriptionView: UIView, GenericCellSubview {
             label.textColor = labelColor
         }
 
-        self.priceLabel.text = "\(config.price)"
+        self.priceLabel.text = "\(config.amount)"
         self.serviceNameLabel.text = "\(config.name)"
         self.serviceCategoryLabel.text = "\(config.category)"
         

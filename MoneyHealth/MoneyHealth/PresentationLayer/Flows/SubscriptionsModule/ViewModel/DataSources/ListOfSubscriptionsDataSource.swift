@@ -43,13 +43,7 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionView>.self, indexPath: indexPath)
             cell.customSubview.setup(
-                config: .init(
-                    id: "1",
-                  name: "Spotify",
-                  category: "Music",
-                  imageName: "Spotify",
-                  backgroundColor: "000000",
-                  price: 9.99
+                config: .init(name: "Shopify", category: "", amount: 10, isAvarageString: "Talse", total: 100, nextChargeString: "2020-11-8"
                 )
             )
             return cell

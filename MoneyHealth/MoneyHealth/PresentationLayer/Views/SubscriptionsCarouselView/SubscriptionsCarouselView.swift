@@ -38,22 +38,12 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.items = [
-            .init(id: "1",
-                  name: "Spotify",
-                  category: "Music",
-                  imageName: "Spotify",
-                  backgroundColor: "000000",
-                  price: 9.99
-            ),
-            .init(id: "1",
-                  name: "Netflix",
-                  category: "Steaming",
-                  imageName: "Netflix",
-                  backgroundColor: "FFFFFF",
-                  price: 9.99
-            )
-        ]
+        APIService.shared.nextSubscriptions
+            .subscribe(onNext: { values in
+                self.items = values
+                self.collectionView.reloadData()
+            })
+            .disposed(by: self.disposeBag)
 
         self.collectionView.backgroundColor = .clear
         self.collectionView.showsHorizontalScrollIndicator = false

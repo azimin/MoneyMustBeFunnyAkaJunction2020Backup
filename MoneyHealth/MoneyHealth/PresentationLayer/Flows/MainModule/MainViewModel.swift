@@ -142,5 +142,10 @@ final class MainViewModel: ViewModelProtocol {
                 self?.popularCategoriesDS.items = $0
             })
             .disposed(by: self.disposeBag)
+
+        self.apiService.getNextSubscriptions(byUserId: 1).subscribe(onSuccess: { value in
+            print(value)
+        })
+        .disposed(by: self.disposeBag)
     }
 }

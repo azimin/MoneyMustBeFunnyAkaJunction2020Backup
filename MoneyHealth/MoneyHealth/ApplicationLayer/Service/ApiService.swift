@@ -17,6 +17,8 @@ class APIService {
     let userAvatarURL = BehaviorSubject<URL?>(value: nil)
     let userBalance = BehaviorSubject<Double>(value: 0)
     let subscrptionPayment = BehaviorSubject<Double?>(value: nil)
+
+    let nextSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
     
     static let shared = APIService()
 
@@ -112,7 +114,11 @@ class APIService {
                 method: .get
             ).responseJSON { [weak self] json in
                 let decoder = JSONDecoder()
-                let categories = try! decoder.decode([PopularCategoryModel].self, from: json.data!)
+                guard let jsonData = json.data else {
+                    return
+                }
+
+                let categories = try! decoder.decode([PopularCategoryModel].self, from: jsonData)
 
                 let data = categories.map {
                     return PopularCategoryItemViewData(
@@ -130,6 +136,27 @@ class APIService {
                 }
                 
                 single(.success(models))
+            }
+            return Disposables.create()
+        }
+    }
+
+    // MARK: - Subscriptions
+
+    func getNextSubscriptions(byUserId id: Int) -> Single<[SubscriptionModel]> {
+        return Single<[SubscriptionModel]>.create { single in
+            AF.request(
+                "http://195.91.231.34:5000/user/next_two_subscriptions/\(id)/",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let decoder = JSONDecoder()
+                guard let jsonData = json.data else {
+                    return
+                }
+
+                let subscriptions = try! decoder.decode([SubscriptionModel].self, from: jsonData)
+                self?.nextSubscriptions.onNext(subscriptions)
+                single(.success(subscriptions))
             }
             return Disposables.create()
         }
