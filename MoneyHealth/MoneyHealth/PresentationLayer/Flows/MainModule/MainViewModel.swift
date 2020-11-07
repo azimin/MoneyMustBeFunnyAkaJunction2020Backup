@@ -133,31 +133,6 @@ final class MainViewModel: ViewModelProtocol {
         
 
         self.popularCategoriesDS.items = categoryModels
-
-        let dummyBehavior = [
-            MostSpendItemViewData(
-                icon: UIImage(named: "3")!,
-                amount: 300,
-                numberOfTransactions: 12,
-                percent: 20,
-                category: .insurance,
-                period: .week
-            ),
-            MostSpendItemViewData(
-                icon: UIImage(named: "4")!,
-                amount: 1500.10,
-                numberOfTransactions: 20,
-                percent: -40,
-                category: .pets,
-                period: .week
-            ),
-        ]
-
-        let behaviourModels = dummyBehavior.map {
-            MostSpendItemModel(data: $0)
-        }
-
-        self.behaviorDS.model.items.onNext(behaviourModels)
     
         self.apiService
             .userAvatarURL
@@ -182,5 +157,10 @@ final class MainViewModel: ViewModelProtocol {
     
     func viewLoaded() {
         self.apiService.getUser(byID: 1)
+        self.apiService.getBehavior(byId: 1, for: Date(), period: .month)
+            .subscribe(onSuccess: { [weak self] in
+                self?.behaviorDS.model.items.onNext($0)
+            })
+            .disposed(by: self.disposeBag)
     }
 }

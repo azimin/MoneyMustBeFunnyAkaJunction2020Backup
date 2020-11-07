@@ -25,16 +25,74 @@ class APIService {
         ).responseJSON { [weak self] json in
 
             let decoder = JSONDecoder()
-            let person = try! decoder.decode(UserModel.self, from: json.data!)
-
-            self?.userName.onNext(person.user_name)
-            self?.userHealth.onNext(person.user_health)
-            if let avatarURL = URL(string: person.user_avatar_url) {
-                self?.userAvatarURL.onNext(avatarURL)
+            if let data = json.data {
+                let person = try! decoder.decode(UserModel.self, from: json.data!)
+                self?.userName.onNext(person.user_name)
+                self?.userHealth.onNext(person.user_health)
+                if let avatarURL = URL(string: person.user_avatar_url) {
+                    self?.userAvatarURL.onNext(avatarURL)
+                }
+                
+                self?.userBalance.onNext(person.user_balance)
+                self?.subscrptionPayment.onNext(person.user_month_subscribtion_payment)
             }
+        }
+    }
+
+    func getBehavior(byId id: Int, for date: Date, period: Period) -> Single<[MostSpendItemModel]> {
+        return Single<[MostSpendItemModel]>.create { single in
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            formatter.locale = Locale.current
+            let dateString = formatter.string(from: date)
             
-            self?.userBalance.onNext(person.user_balance)
-            self?.subscrptionPayment.onNext(person.user_month_subscribtion_payment)
+            AF.request(
+                "http://195.91.231.34:5000/user/insides/\(id)/2016-11-07/\(period.rawValue)",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let parsedData = try! JSONSerialization.jsonObject(with: json.data!, options: .mutableLeaves) as! [String: AnyObject]
+                
+                let brand = parsedData["more_of_brand"] as! [String: AnyObject]
+                let category = parsedData["more_of_category"] as! [String: AnyObject]
+                
+                let brandModel = BehaviourModel(
+                    amount: brand["amount"] as! Double,
+                    change: brand["change"] as! Double,
+                    imageName: brand["image_name"] as! String,
+                    category: brand["name"] as! String,
+                    numberOfTransactions: brand["number_of_transactions"] as! Int
+                )
+                
+                let categoryModel = BehaviourModel(
+                    amount: category["amount"] as! Double,
+                    change: category["change"] as! Double,
+                    imageName: category["image_name"] as! String,
+                    category: category["name"] as! String,
+                    numberOfTransactions: category["number_of_transactions"] as! Int
+                )
+                
+                let behaviors = [brandModel, categoryModel]
+                
+                let data = behaviors.map {
+                    MostSpendItemViewData(
+                        icon: UIImage(named: String($0.imageName.split(separator: ".")[0]))!,
+                        amount: $0.amount,
+                        numberOfTransactions: $0.numberOfTransactions,
+                        percent: $0.change,
+                        category: $0.category,
+                        period: period
+                    )
+                }
+                
+                let models = data.map {
+                    MostSpendItemModel(data: $0)
+                }
+                
+                single(.success(models))
+            
+            }
+            return Disposables.create()
         }
     }
 }
