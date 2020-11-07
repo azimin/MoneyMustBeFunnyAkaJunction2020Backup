@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class ShowSpendsInAR: UIControl {
+final class SpendingActionButton: UIControl {
 
     let titleLabel: UILabel = {
         let label = UILabel()

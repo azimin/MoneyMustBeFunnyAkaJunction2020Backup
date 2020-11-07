@@ -17,10 +17,19 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
     let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Upcoming write-offs"
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .black
         return label
     }()
+
+    func updateStyle(style: HorizontalSubscriptionsDataSource.Style) {
+        switch style {
+        case .upcomming:
+            self.titleLabel.text = "Upcoming write-offs"
+        case .recommended:
+            self.titleLabel.text = "People similar to you subscribe"
+        }
+    }
 
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
