@@ -5,6 +5,7 @@
 //  Created by Egor Petrov on 07.11.2020.
 //
 
+import Nuke
 import UIKit
 import SnapKit
 
@@ -47,5 +48,9 @@ final class ImageViewWithProgress: UIView {
             make.size.equalTo(90)
             make.center.equalToSuperview()
         }
+    }
+
+    func loadImageByUrl(_ url: URL) {
+        Nuke.loadImage(with: url, into: self.imageView)
     }
 }
