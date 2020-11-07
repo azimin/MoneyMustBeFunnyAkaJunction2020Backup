@@ -34,7 +34,7 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.collectionView.backgroundColor = UIColor(hex: "E5E5E5")
+        self.collectionView.backgroundColor = .clear
         self.collectionView.showsHorizontalScrollIndicator = false
 
         guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
@@ -63,8 +63,9 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
         }
 
         self.addSubview(self.collectionView)
+        self.collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         self.collectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview()
             make.height.equalTo(180)
             make.trailing.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(24)

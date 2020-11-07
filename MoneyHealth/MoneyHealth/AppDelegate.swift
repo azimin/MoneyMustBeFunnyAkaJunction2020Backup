@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.tintColor = .init(hex: "1A1A1A")
         tabBarController.tabBar.unselectedItemTintColor = .init(hex: "D1D1D1")
         tabBarController.viewControllers = [
-            mainVC,
+            NavigationViewController.init(rootViewController: mainVC),
             NavigationViewController.init(rootViewController: subscriptionsVC)
         ]
 

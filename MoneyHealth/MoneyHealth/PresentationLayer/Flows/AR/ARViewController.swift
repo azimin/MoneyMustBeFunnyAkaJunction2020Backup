@@ -4,6 +4,8 @@ import UIKit
 import Vision
 
 class ViewController: UIViewController, ARSCNViewDelegate {
+
+    var isTransitionInProgress = false
     
     @IBOutlet var sceneView: ARSCNView!
     
@@ -115,7 +117,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             tabNode.scale = .init(0.6, 0.6, 0.6)
             tabNode.rotation.x = .pi / 3
             tabNode.position.z = -0.15
-            tabNode.position.x = 0.06
+            tabNode.position.x = -0.20
             tabNode.runAction(self.tabPresentationAction)
             node.addChildNode(tabNode)
         }
@@ -183,21 +185,24 @@ extension ViewController: ARSessionDelegate {
         
         self.lastRotation = node.rotation.z
         
-        self.velocities.append(velocity)
+        self.velocities.append(-velocity)
         
         if velocities.count > 5 {
             self.velocities.remove(at: 0)
         }
         
         if velocities.count > 3 {
-            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.025 {
+            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.015, self.isTransitionInProgress == false {
                 print("shake!!!")
                 self.velocities.removeAll()
                 self.lastRotation = nil
-                
+
+                self.isTransitionInProgress = true
                 let tabNode = (node.childNodes.first { $0 as? TabNode != nil } as! TabNode)
                 tabNode.next()
-                tabNode.runAction(self.tabChangeAction)
+                tabNode.runAction(self.tabChangeAction) {
+                    self.isTransitionInProgress = false
+                }
             }
         }
         
