@@ -46,6 +46,21 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
 
     @objc
     func showAR() {
+        let balance = try! APIService.shared.userBalance.value()
+        let helthScore = try! APIService.shared.userHealth.value()
+
+        let healthView = HealthView(
+            healthScore: helthScore,
+            balance: balance,
+            period: .week,
+            income: 10,
+            spendings: 3
+        )
+        healthView.snp.makeConstraints { make in
+            make.width.equalTo(224)
+            make.height.equalTo(221)
+        }
+
         let arVC = UIStoryboard(name: "AR", bundle: nil).instantiateInitialViewController()!
         arVC.modalPresentationStyle = .fullScreen
         self.present(arVC, animated: true, completion: nil)
