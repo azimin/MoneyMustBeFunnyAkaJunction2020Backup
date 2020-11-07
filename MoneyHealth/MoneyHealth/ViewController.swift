@@ -19,7 +19,8 @@ class ViewController: UIViewController {
 
         self.view.addSubview(self.progressView)
         self.progressView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
 
         progressView.avatarView.currentProgress = 1

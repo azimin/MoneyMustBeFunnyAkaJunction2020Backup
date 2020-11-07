@@ -39,6 +39,10 @@ final class HeaderView: UIView {
         return button
     }()
 
+    let balanceView = BalanceView()
+
+    let showInARButton = ShowSpendsInAR()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     
@@ -90,7 +94,23 @@ final class HeaderView: UIView {
             make.centerX.equalToSuperview()
             make.leading.greaterThanOrEqualToSuperview().offset(8)
             make.trailing.lessThanOrEqualToSuperview().inset(8)
-            make.bottom.equalToSuperview()
+        }
+
+        self.addSubview(self.balanceView)
+        self.balanceView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(15)
+            make.top.equalTo(stackView.snp.bottom).offset(49)
+            make.width.equalToSuperview().multipliedBy(0.54)
+            make.height.equalTo(128)
+            make.bottom.equalToSuperview().inset(20)
+        }
+
+        self.addSubview(self.showInARButton)
+        self.showInARButton.snp.makeConstraints { make in
+            make.leading.equalTo(self.balanceView.snp.trailing).offset(16)
+            make.top.equalTo(stackView.snp.bottom).offset(49)
+            make.height.equalTo(128)
+            make.trailing.equalToSuperview().inset(16)
         }
     }
 }

@@ -14,6 +14,7 @@ final class BalanceView: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textColor = UIColor(hex: "191919").withAlphaComponent(0.2)
+        label.text = "Total Balance"
         return label
     }()
 
@@ -21,6 +22,7 @@ final class BalanceView: UIView {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .black
+        label.text = "$12,032.14"
         return label
     }()
 
