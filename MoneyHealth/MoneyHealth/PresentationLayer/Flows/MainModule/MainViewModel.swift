@@ -66,13 +66,17 @@ final class MainViewModel: ViewModelProtocol {
         let dataSource = HeaderDataSource(model: headerModel)
 
         self.spendingsItemModel = LookAtSpendingsItemModel(data: .init())
+
         let spendingsDS = LookAtSpendingsDataSource(model: self.spendingsItemModel)
+        
+        let titleDS = TitleDataSource()
 
         self.collectionViewContainer = CollectionViewContainer(
             dataSources:
                 [
                     dataSource,
-                    spendingsDS
+                    spendingsDS,
+                    titleDS
                 ]
         )
 
