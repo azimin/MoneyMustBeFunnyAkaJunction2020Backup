@@ -37,6 +37,13 @@
 		23B538A52556E29A008DF7D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A42556E29A008DF7D7 /* MainView.swift */; };
 		23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A82556E30B008DF7D7 /* MainViewModel.swift */; };
 		23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AC2556E3A9008DF7D7 /* MainViewController.swift */; };
+		9FB3AC6F2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC6E2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift */; };
+		9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */; };
+		9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09182556E27000FA4791 /* SubscriptionView.swift */; };
+		9FCA091C2556E31000FA4791 /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */; };
+		9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */; };
+		9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */; };
+		9FCA092D2556EA3800FA4791 /* SubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */; };
 		23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */; };
 		23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */; };
 		23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */; };
@@ -88,6 +95,13 @@
 		23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsItemModel.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FB3AC6E2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpCommingSubscriptionsDataSource.swift; sourceTree = "<group>"; };
+		9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
+		9FCA09182556E27000FA4791 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Contrast.swift"; sourceTree = "<group>"; };
+		9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
+		9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +129,7 @@
 		2317FE9225569FD100E049B8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9FB3AC712556EC35005E243A /* SubscriptionModel */,
 				2317FE9E2556A18B00E049B8 /* PostProcessedModels */,
 				2317FE9D2556A17B00E049B8 /* PreprocessingModels */,
 			);
@@ -160,6 +175,7 @@
 		2317FEAE2556B58E00E049B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9FCA09162556E24600FA4791 /* SubscriotionView */,
 				23B5388E2556DBF2008DF7D7 /* LookAtSpendingsItemView */,
 				2317FEE52556C9D000E049B8 /* Buttons */,
 				2317FEE12556C6E100E049B8 /* Balance */,
@@ -218,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				2317FEC52556B6F100E049B8 /* UIColor+Hex.swift */,
+				9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -323,6 +340,7 @@
 		23B538A22556E280008DF7D7 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9FCA09202556E94100FA4791 /* SubscriptionsModule */,
 				23B538A32556E288008DF7D7 /* MainModule */,
 			);
 			path = Flows;
@@ -347,6 +365,65 @@
 				5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9FB3AC712556EC35005E243A /* SubscriptionModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */,
+			);
+			path = SubscriptionModel;
+			sourceTree = "<group>";
+		};
+		9FCA09162556E24600FA4791 /* SubscriotionView */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09182556E27000FA4791 /* SubscriptionView.swift */,
+			);
+			path = SubscriotionView;
+			sourceTree = "<group>";
+		};
+		9FCA09202556E94100FA4791 /* SubscriptionsModule */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09282556EA2B00FA4791 /* View */,
+				9FCA092A2556EA2F00FA4791 /* ViewController */,
+				9FCA092F2556EA3B00FA4791 /* ViewModel */,
+			);
+			path = SubscriptionsModule;
+			sourceTree = "<group>";
+		};
+		9FCA09282556EA2B00FA4791 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9FCA092A2556EA2F00FA4791 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9FCA092F2556EA3B00FA4791 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09312556EACA00FA4791 /* DataSources */,
+				9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9FCA09312556EACA00FA4791 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				9FB3AC6E2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		E56F3519003F500A4047E613 /* Frameworks */ = {
@@ -471,12 +548,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */,
 				23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */,
 				23B538A52556E29A008DF7D7 /* MainView.swift in Sources */,
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
+				9FCA092D2556EA3800FA4791 /* SubscriptionsViewModel.swift in Sources */,
 				23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
+				9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */,
+				9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */,
 				23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */,
 				23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */,
 				2317FEDD2556C29100E049B8 /* RatingView.swift in Sources */,
@@ -495,7 +576,9 @@
 				23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
+				9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
+				9FB3AC6F2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
@@ -505,6 +588,7 @@
 				23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */,
 				2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */,
 				2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */,
+				9FCA091C2556E31000FA4791 /* UIColor+Contrast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
