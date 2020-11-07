@@ -37,6 +37,15 @@
 		23B538A52556E29A008DF7D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A42556E29A008DF7D7 /* MainView.swift */; };
 		23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A82556E30B008DF7D7 /* MainViewModel.swift */; };
 		23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AC2556E3A9008DF7D7 /* MainViewController.swift */; };
+		23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */; };
+		23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */; };
+		23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */; };
+		23B538B92556EB99008DF7D7 /* LookAtSpendingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */; };
+		23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */; };
+		23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */; };
+		23B538C42556F296008DF7D7 /* PopularCategoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538C32556F296008DF7D7 /* PopularCategoryItemView.swift */; };
+		23B538C82556F6ED008DF7D7 /* PopularCategoryItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538C72556F6ED008DF7D7 /* PopularCategoryItemViewData.swift */; };
+		23B538CB2556F76C008DF7D7 /* PopularCategoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538CA2556F76C008DF7D7 /* PopularCategoryItemModel.swift */; };
 		9FB3AC6F2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC6E2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift */; };
 		9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */; };
 		9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09182556E27000FA4791 /* SubscriptionView.swift */; };
@@ -44,12 +53,6 @@
 		9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */; };
 		9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */; };
 		9FCA092D2556EA3800FA4791 /* SubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */; };
-		23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */; };
-		23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */; };
-		23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */; };
-		23B538B92556EB99008DF7D7 /* LookAtSpendingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */; };
-		23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */; };
-		23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,9 @@
 		23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsDataSource.swift; sourceTree = "<group>"; };
 		23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsItemViewData.swift; sourceTree = "<group>"; };
 		23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsItemModel.swift; sourceTree = "<group>"; };
+		23B538C32556F296008DF7D7 /* PopularCategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryItemView.swift; sourceTree = "<group>"; };
+		23B538C72556F6ED008DF7D7 /* PopularCategoryItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryItemViewData.swift; sourceTree = "<group>"; };
+		23B538CA2556F76C008DF7D7 /* PopularCategoryItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCategoryItemModel.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB3AC6E2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpCommingSubscriptionsDataSource.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		2317FEAE2556B58E00E049B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23B538C22556F247008DF7D7 /* PopularCategoryItemView */,
 				9FCA09162556E24600FA4791 /* SubscriotionView */,
 				23B5388E2556DBF2008DF7D7 /* LookAtSpendingsItemView */,
 				2317FEE52556C9D000E049B8 /* Buttons */,
@@ -356,6 +363,16 @@
 				23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		23B538C22556F247008DF7D7 /* PopularCategoryItemView */ = {
+			isa = PBXGroup;
+			children = (
+				23B538C32556F296008DF7D7 /* PopularCategoryItemView.swift */,
+				23B538C72556F6ED008DF7D7 /* PopularCategoryItemViewData.swift */,
+				23B538CA2556F76C008DF7D7 /* PopularCategoryItemModel.swift */,
+			);
+			path = PopularCategoryItemView;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -566,6 +583,7 @@
 				2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */,
 				2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */,
 				23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */,
+				23B538C82556F6ED008DF7D7 /* PopularCategoryItemViewData.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
@@ -573,12 +591,14 @@
 				23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */,
 				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
 				23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */,
+				23B538CB2556F76C008DF7D7 /* PopularCategoryItemModel.swift in Sources */,
 				23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
 				9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				9FB3AC6F2556EC11005E243A /* UpCommingSubscriptionsDataSource.swift in Sources */,
+				23B538C42556F296008DF7D7 /* PopularCategoryItemView.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
