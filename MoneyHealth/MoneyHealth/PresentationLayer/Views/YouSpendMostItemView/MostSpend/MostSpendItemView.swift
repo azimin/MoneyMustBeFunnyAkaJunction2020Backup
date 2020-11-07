@@ -92,7 +92,7 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
         self.iconImageView.tintColor = .white
         self.iconImageView.backgroundColor = CategoryToColorMap.imageToColor(imageName: model.data.iconString)
 
-        self.amountLabel.text = String(format: "$ %.2f", model.data.amount)
+        self.amountLabel.text = String(format: "€ %.2f", model.data.amount)
     
         if model.data.numberOfTransactions == 1 {
             self.transactionsLabel.text = "\(model.data.numberOfTransactions) transaction"

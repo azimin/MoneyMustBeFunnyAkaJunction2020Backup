@@ -28,6 +28,7 @@ final class HealthView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = .systemFont(ofSize: 17, weight: .semibold)
+        label.text = "Financial Health"
         return label
     }()
 
@@ -52,15 +53,15 @@ final class HealthView: UIView {
         return label
     }()
 
-    let incomeLabel = UILabel()
-    let spendingsLabel = UILabel()
+    let totalSpending = UILabel()
+    let spendingsChangeLabel = UILabel()
 
     init(
         healthScore: Double,
         balance: Double,
         period: Period,
-        income: Double,
-        spendings: Double
+        periodSpend: Double,
+        periodSpendChange: Double
     ) {
         super.init(frame: .zero)
 
@@ -69,7 +70,7 @@ final class HealthView: UIView {
         self.periodLabel.text = "This \(period.rawValue)"
         
         let attributedString = NSMutableAttributedString(
-            string: "Income",
+            string: "Spedings",
             attributes:
                 [
                     .foregroundColor: UIColor.white,
@@ -102,7 +103,7 @@ final class HealthView: UIView {
     
         attributedString.append(
             .init(
-                string: String(format: "%.2f%", income),
+                string: String(format: "€%.2f%", periodSpend),
                 attributes:
                     [
                         .foregroundColor: UIColor(hex: "1ED760"),
@@ -111,7 +112,7 @@ final class HealthView: UIView {
             )
         )
         
-        self.incomeLabel.attributedText = attributedString
+        self.totalSpending.attributedText = attributedString
         
         let spendingsAttributedString = NSMutableAttributedString(
             string: "Spendings",
@@ -147,7 +148,7 @@ final class HealthView: UIView {
 
         spendingsAttributedString.append(
             .init(
-                string: String(format: "%.2f%", spendings),
+                string: String(format: "%.2f%", periodSpendChange),
                 attributes:
                     [
                         .foregroundColor: UIColor(hex: "1ED760"),
@@ -156,7 +157,7 @@ final class HealthView: UIView {
             )
         )
         
-        self.spendingsLabel.attributedText = attributedString
+        self.spendingsChangeLabel.attributedText = attributedString
         
         self.setupInitialLayout()
     }
@@ -166,16 +167,16 @@ final class HealthView: UIView {
     }
     
     func setupInitialLayout() {
-        self.helthContanerView.addSubview(self.healthScoreLabel)
-        self.healthScoreLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.size.equalTo(54)
-        }
-
         self.addSubview(self.helthContanerView)
         self.helthContanerView.snp.makeConstraints { make in
             make.size.equalTo(54)
             make.leading.top.equalToSuperview()
+        }
+
+        self.helthContanerView.addSubview(self.healthScoreLabel)
+        self.healthScoreLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.leading.equalToSuperview().inset(12)
         }
         
         self.addSubview(self.titleLabel)
@@ -202,16 +203,16 @@ final class HealthView: UIView {
             make.top.equalTo(self.balanceLabel.snp.bottom).offset(28)
         }
 
-        self.addSubview(self.incomeLabel)
-        self.incomeLabel.snp.makeConstraints { make in
+        self.addSubview(self.totalSpending)
+        self.totalSpending.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(3)
             make.top.equalTo(self.periodLabel.snp.bottom).offset(8)
             make.bottom.equalToSuperview()
         }
 
-        self.addSubview(self.spendingsLabel)
-        self.spendingsLabel.snp.makeConstraints { make in
-            make.leading.equalTo(self.incomeLabel.snp.trailing).offset(3)
+        self.addSubview(self.spendingsChangeLabel)
+        self.spendingsChangeLabel.snp.makeConstraints { make in
+            make.leading.equalTo(self.totalSpending.snp.trailing).offset(3)
             make.top.equalTo(self.periodLabel.snp.bottom).offset(8)
             make.bottom.equalToSuperview()
         }

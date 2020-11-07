@@ -52,17 +52,27 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         let healthView = HealthView(
             healthScore: helthScore,
             balance: balance,
-            period: .week,
-            income: 10,
-            spendings: 3
+            period: .month,
+            periodSpend: 500,
+            periodSpendChange: 0.5
         )
+        
         healthView.snp.makeConstraints { make in
             make.width.equalTo(224)
             make.height.equalTo(221)
         }
 
+        let image = imageWithView(view: healthView)
+
         let arVC = UIStoryboard(name: "AR", bundle: nil).instantiateInitialViewController()!
         arVC.modalPresentationStyle = .fullScreen
         self.present(arVC, animated: true, completion: nil)
     }
+}
+
+func imageWithView(view: UIView) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
+    defer { UIGraphicsEndImageContext() }
+    view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+    return UIGraphicsGetImageFromCurrentImageContext()
 }

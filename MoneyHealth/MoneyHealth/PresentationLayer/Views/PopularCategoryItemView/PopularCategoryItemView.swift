@@ -151,7 +151,7 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
             self.tendencyLabel.textColor = .red
         }
 
-        let amount = String(format: "$ %.2f", model.data.amount)
+        let amount = String(format: "€ %.2f", model.data.amount)
         
         let parts = amount.split(separator: ".")
 
