@@ -43,7 +43,7 @@ final class BalanceView: UIView {
         self.addSubview(self.titleLabel)
         self.titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview().offset(16)
         }
 
         self.addSubview(self.balanceLabel)
