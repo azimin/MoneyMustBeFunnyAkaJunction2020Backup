@@ -34,11 +34,14 @@
 		23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538982556DE35008DF7D7 /* SpendingViewData.swift */; };
 		23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5389B2556DE70008DF7D7 /* SpendingItemModel.swift */; };
 		23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5389E2556DFFB008DF7D7 /* GenericCollectionViewCell.swift */; };
-		9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09182556E27000FA4791 /* SubscriptionView.swift */; };
-		9FCA091C2556E31000FA4791 /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */; };
 		23B538A52556E29A008DF7D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A42556E29A008DF7D7 /* MainView.swift */; };
 		23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538A82556E30B008DF7D7 /* MainViewModel.swift */; };
 		23B538AD2556E3A9008DF7D7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AC2556E3A9008DF7D7 /* MainViewController.swift */; };
+		9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09182556E27000FA4791 /* SubscriptionView.swift */; };
+		9FCA091C2556E31000FA4791 /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */; };
+		9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */; };
+		9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */; };
+		9FCA092D2556EA3800FA4791 /* SubscriptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCA09182556E27000FA4791 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
 		9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Contrast.swift"; sourceTree = "<group>"; };
+		9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsView.swift; sourceTree = "<group>"; };
+		9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +319,7 @@
 		23B538A22556E280008DF7D7 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9FCA09202556E94100FA4791 /* SubscriptionsModule */,
 				23B538A32556E288008DF7D7 /* MainModule */,
 			);
 			path = Flows;
@@ -343,6 +350,40 @@
 				9FCA09182556E27000FA4791 /* SubscriptionView.swift */,
 			);
 			path = SubscriotionView;
+			sourceTree = "<group>";
+		};
+		9FCA09202556E94100FA4791 /* SubscriptionsModule */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09282556EA2B00FA4791 /* View */,
+				9FCA092A2556EA2F00FA4791 /* ViewController */,
+				9FCA092F2556EA3B00FA4791 /* ViewModel */,
+			);
+			path = SubscriptionsModule;
+			sourceTree = "<group>";
+		};
+		9FCA09282556EA2B00FA4791 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09252556EA1500FA4791 /* SubscriptionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9FCA092A2556EA2F00FA4791 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA09212556E9CE00FA4791 /* SubscriptionsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9FCA092F2556EA3B00FA4791 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9FCA092C2556EA3800FA4791 /* SubscriptionsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E56F3519003F500A4047E613 /* Frameworks */ = {
@@ -470,8 +511,10 @@
 				23B5389C2556DE70008DF7D7 /* SpendingItemModel.swift in Sources */,
 				23B538A52556E29A008DF7D7 /* MainView.swift in Sources */,
 				2317FEA92556A8CD00E049B8 /* SpendingService.swift in Sources */,
+				9FCA092D2556EA3800FA4791 /* SubscriptionsViewModel.swift in Sources */,
 				23B538702556CE2D008DF7D7 /* ReusableView.swift in Sources */,
 				2317FEA02556A19F00E049B8 /* MonthSpendAmount.swift in Sources */,
+				9FCA09262556EA1500FA4791 /* SubscriptionsView.swift in Sources */,
 				2317FEE72556C9D900E049B8 /* ShowSpendsInAR.swift in Sources */,
 				9FCA09192556E27000FA4791 /* SubscriptionView.swift in Sources */,
 				23B5389F2556DFFB008DF7D7 /* GenericCollectionViewCell.swift in Sources */,
@@ -488,6 +531,7 @@
 				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
+				9FCA09222556E9CE00FA4791 /* SubscriptionsViewController.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
