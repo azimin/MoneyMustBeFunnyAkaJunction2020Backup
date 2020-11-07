@@ -15,6 +15,10 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
     var isEnabled = true
     var state = DataSourceState.items
 
+    var items: [SubscriptionModel] = []
+
+    let disposeBag = DisposeBag()
+
     var cellsForRegistration: [CollectionViewCell.Type]? {
         return [
             GenericCollectionViewCell<CategoryHeaderView>.self,
@@ -23,7 +27,12 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
     }
 
     init() {
-
+        APIService.shared.activeSubscriptions
+            .subscribe(onNext: { values in
+                self.items = values
+                self.collectionView.reloadData()
+            })
+            .disposed(by: self.disposeBag)
     }
 
     var numberOfSections: Int {
@@ -31,7 +40,7 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return 10
+        return self.items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -43,8 +52,7 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionView>.self, indexPath: indexPath)
             cell.customSubview.setup(
-                config: .init(name: "Shopify", category: "", amount: 10, isAvarageString: "Talse", total: 100, nextChargeString: "2020-11-8"
-                )
+                config: self.items[indexPath.row]
             )
             return cell
         }

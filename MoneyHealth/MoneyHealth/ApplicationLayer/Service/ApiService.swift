@@ -19,6 +19,7 @@ class APIService {
     let subscrptionPayment = BehaviorSubject<Double?>(value: nil)
 
     let nextSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
+    let activeSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
     
     static let shared = APIService()
 
@@ -33,7 +34,7 @@ class APIService {
                 let person = try! decoder.decode(UserModel.self, from: json.data!)
                 self?.userName.onNext(person.user_name)
                 self?.userHealth.onNext(person.user_health)
-                if let avatarURL = URL(string: person.user_avatar_url) {
+                if let avatarURL = URL(string: person.userAvatatFullUrl) {
                     self?.userAvatarURL.onNext(avatarURL)
                 }
                 
@@ -156,6 +157,25 @@ class APIService {
 
                 let subscriptions = try! decoder.decode([SubscriptionModel].self, from: jsonData)
                 self?.nextSubscriptions.onNext(subscriptions)
+                single(.success(subscriptions))
+            }
+            return Disposables.create()
+        }
+    }
+
+    func getActiveSubscriptions(byUserId id: Int) -> Single<[SubscriptionModel]> {
+        return Single<[SubscriptionModel]>.create { single in
+            AF.request(
+                "http://195.91.231.34:5000/user/active_subscriptions/\(id)/",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let decoder = JSONDecoder()
+                guard let jsonData = json.data else {
+                    return
+                }
+
+                let subscriptions = try! decoder.decode([SubscriptionModel].self, from: jsonData)
+                self?.activeSubscriptions.onNext(subscriptions)
                 single(.success(subscriptions))
             }
             return Disposables.create()
