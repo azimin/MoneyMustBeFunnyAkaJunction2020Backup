@@ -44,6 +44,8 @@ final class ImageViewWithProgress: UIView {
         self.addSubview(self.imageView)
         imageView.backgroundColor = .gray
         imageView.layer.cornerRadius = 45
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFill
         self.imageView.snp.makeConstraints { make in
             make.size.equalTo(90)
             make.center.equalToSuperview()
