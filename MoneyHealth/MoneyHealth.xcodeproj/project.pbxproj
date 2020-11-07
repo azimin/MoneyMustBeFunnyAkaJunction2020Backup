@@ -48,6 +48,7 @@
 		23B538CB2556F76C008DF7D7 /* PopularCategoryItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538CA2556F76C008DF7D7 /* PopularCategoryItemModel.swift */; };
 		23B538D02556FE90008DF7D7 /* TitleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538CF2556FE90008DF7D7 /* TitleDataSource.swift */; };
 		9F22F485255709F3005F24B1 /* SpendingsAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */; };
+		9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */; };
 		9F3013E6255704E1006C6474 /* SubscriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */; };
 		9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */; };
 		9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */; };
@@ -110,6 +111,7 @@
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsAndButtonView.swift; sourceTree = "<group>"; };
+		9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gradient.swift"; sourceTree = "<group>"; };
 		9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionHeaderView.swift; sourceTree = "<group>"; };
 		9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSubscriptionsDataSource.swift; sourceTree = "<group>"; };
 		9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			children = (
 				2317FEC52556B6F100E049B8 /* UIColor+Hex.swift */,
 				9FCA091B2556E31000FA4791 /* UIColor+Contrast.swift */,
+				9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				23B538D02556FE90008DF7D7 /* TitleDataSource.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
 				9FB3AC852557009E005E243A /* ListOfSubscriptionsDataSource.swift in Sources */,
+				9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */,
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
 				23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */,
