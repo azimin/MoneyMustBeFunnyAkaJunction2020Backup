@@ -90,7 +90,7 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
     func configure(with model: MostSpendItemModel) {
         self.iconImageView.iconImageView.image = model.data.icon
         self.iconImageView.tintColor = .white
-        self.iconImageView.backgroundColor = UIColor(hex: "FF9C87")
+        self.iconImageView.backgroundColor = CategoryToColorMap.imageToColor(imageName: model.data.iconString)
 
         self.amountLabel.text = String(format: "$ %.2f", model.data.amount)
     
@@ -194,7 +194,7 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
                 string: model.data.category,
                 attributes:
                     [
-                    .foregroundColor: UIColor(hex: "FF9C87"),
+                    .foregroundColor: CategoryToColorMap.imageToColor(imageName: model.data.iconString),
                     .font: UIFont.systemFont(ofSize: 15, weight: .bold)
                     ]
             )
