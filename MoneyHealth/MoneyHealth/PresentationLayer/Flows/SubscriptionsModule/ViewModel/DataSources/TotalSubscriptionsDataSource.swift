@@ -12,6 +12,14 @@ import RxSwift
 final class TotalSubscriptionsDataSource: CollectionViewDataSource {
     weak var delegate: CollectionViewDataSourceContainerDelegate?
 
+    private let disposeBag = DisposeBag()
+
+    let isAll: Bool
+
+    init(isAll: Bool) {
+        self.isAll = isAll
+    }
+
     var isEnabled = true
     var state = DataSourceState.items
 
@@ -31,7 +39,16 @@ final class TotalSubscriptionsDataSource: CollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SpendingsAndButtonView>.self, indexPath: indexPath)
-        cell.customSubview.update(style: .subscriptions)
+        cell.customSubview.update(style: self.isAll ? .subscriptionsAll : .subscriptions)
+        cell.customSubview.spendingActionButton.rx
+            .controlEvent(.touchUpInside)
+            .subscribe(onNext: {
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushAllSubscriptions"),
+                    object: nil
+                )
+            })
+            .disposed(by: self.disposeBag)
         return cell
     }
 

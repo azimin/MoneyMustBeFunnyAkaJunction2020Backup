@@ -5,7 +5,7 @@
 //  Created by Alexander on 11/7/20.
 //
 
-final class SubscriptionsViewModel: ViewModelProtocol {
+final class SubscriptionsListViewModel: ViewModelProtocol {
 
     struct Output {
     }
@@ -22,14 +22,10 @@ final class SubscriptionsViewModel: ViewModelProtocol {
         self.output = Output()
         self.input = Input()
 
-        let upcomingDataSource = HorizontalSubscriptionsDataSource(style: .upcomming)
-        let recommendedDataSource = HorizontalSubscriptionsDataSource(style: .recommended)
-
         self.collectionViewContainer = CollectionViewContainer(
             dataSources: [
-                TotalSubscriptionsDataSource(isAll: false),
-                upcomingDataSource,
-                recommendedDataSource
+                TotalSubscriptionsDataSource(isAll: true),
+                ListOfSubscriptionsDataSource()
             ]
         )
     }

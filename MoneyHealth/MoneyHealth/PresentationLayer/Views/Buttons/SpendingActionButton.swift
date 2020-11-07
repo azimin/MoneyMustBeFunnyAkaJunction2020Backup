@@ -12,7 +12,7 @@ import AnimatedGradientView
 final class SpendingActionButton: UIControl {
     func update(style: SpendingsAndButtonView.Style) {
         switch style {
-        case .subscriptions:
+        case .subscriptions, .subscriptionsAll:
             self.iconImageView.image = UIImage(named: "subscriptions_action")
             self.titleLabel.text = "All Subscriptions"
             self.gradientView2.isHidden = true

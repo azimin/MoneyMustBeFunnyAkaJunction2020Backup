@@ -11,6 +11,7 @@ import SnapKit
 final class SpendingsAndButtonView: UIView, GenericCellSubview {
     enum Style {
         case subscriptions
+        case subscriptionsAll
         case main
     }
 
@@ -21,6 +22,9 @@ final class SpendingsAndButtonView: UIView, GenericCellSubview {
             self.balanceView.titleLabel.text = "Recurent payments per month"
         case .main:
             self.balanceView.titleLabel.text = "Total Balance"
+        case .subscriptionsAll:
+            self.balanceView.titleLabel.text = "Recurent payments per month"
+            self.spendingActionButton.isHidden = true
         }
     }
 
