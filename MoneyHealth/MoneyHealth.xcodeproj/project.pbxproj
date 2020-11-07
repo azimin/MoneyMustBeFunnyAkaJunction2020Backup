@@ -40,6 +40,9 @@
 		23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */; };
 		23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */; };
 		23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */; };
+		23B538B92556EB99008DF7D7 /* LookAtSpendingsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */; };
+		23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */; };
+		23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		23B538AF2556E472008DF7D7 /* HeaderItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemViewData.swift; sourceTree = "<group>"; };
 		23B538B22556E4F2008DF7D7 /* HeaderItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderItemModel.swift; sourceTree = "<group>"; };
 		23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDataSource.swift; sourceTree = "<group>"; };
+		23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsDataSource.swift; sourceTree = "<group>"; };
+		23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsItemViewData.swift; sourceTree = "<group>"; };
+		23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingsItemModel.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -298,6 +304,8 @@
 			children = (
 				23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */,
 				23B538962556DE28008DF7D7 /* SpendingView */,
+				23B538BB2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift */,
+				23B538BE2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift */,
 			);
 			path = LookAtSpendingsItemView;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 				23B538A82556E30B008DF7D7 /* MainViewModel.swift */,
 				23B538AC2556E3A9008DF7D7 /* MainViewController.swift */,
 				23B538B52556E8A8008DF7D7 /* HeaderDataSource.swift */,
+				23B538B82556EB99008DF7D7 /* LookAtSpendingsDataSource.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -480,7 +489,9 @@
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
 				23B538682556CDC0008DF7D7 /* CollectionViewContainer.swift in Sources */,
 				23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */,
+				23B538BC2556EBDA008DF7D7 /* LookAtSpendingsItemViewData.swift in Sources */,
 				23B538992556DE35008DF7D7 /* SpendingViewData.swift in Sources */,
+				23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */,
 				23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
 				23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */,
@@ -488,6 +499,7 @@
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
+				23B538B92556EB99008DF7D7 /* LookAtSpendingsDataSource.swift in Sources */,
 				23B538742556CF1C008DF7D7 /* UICollectionView+Reusable.swift in Sources */,
 				23B538902556DC13008DF7D7 /* LookAtSpendingItemView.swift in Sources */,
 				23B538B62556E8A8008DF7D7 /* HeaderDataSource.swift in Sources */,

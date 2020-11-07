@@ -10,7 +10,15 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, ReusableView {
+final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GenericConfigurableCellComponent {
+
+    typealias ViewData = LookAtSpendingsItemViewData
+    typealias Model = LookAtSpendingsItemModel
+
+    var model: Model?
+
+    var disposeBag = DisposeBag()
+
     let titleLabel: UILabel = {
        let label = UILabel()
         label.text = "Look at your spendings"
@@ -79,6 +87,17 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+
+    func configure(with model: LookAtSpendingsItemModel) {
+        self.model = model
+        bindOutput(from: model)
+    }
+
+    func bindOutput(from model: LookAtSpendingsItemModel) {
+        model.items
+            .bind(to: self.rx.items)
+            .disposed(by: self.disposeBag)
     }
 }
 

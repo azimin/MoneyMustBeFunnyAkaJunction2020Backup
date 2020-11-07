@@ -54,6 +54,7 @@ final class MainViewModel: ViewModelProtocol {
     var input: Input
 
     let headerModel: HeaderItemModel
+    let spendingsItemModel: LookAtSpendingsItemModel
 
     let collectionViewContainer: CollectionViewContainer
 
@@ -63,10 +64,15 @@ final class MainViewModel: ViewModelProtocol {
 
         self.headerModel = HeaderItemModel(data: .init())
         let dataSource = HeaderDataSource(model: headerModel)
+
+        self.spendingsItemModel = LookAtSpendingsItemModel(data: .init())
+        let spendingsDS = LookAtSpendingsDataSource(model: self.spendingsItemModel)
+
         self.collectionViewContainer = CollectionViewContainer(
             dataSources:
                 [
-                    dataSource
+                    dataSource,
+                    spendingsDS
                 ]
         )
     }
