@@ -58,6 +58,7 @@
 		23B5390925573219008DF7D7 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5390825573219008DF7D7 /* ApiService.swift */; };
 		23B5391725573589008DF7D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5391625573589008DF7D7 /* UserModel.swift */; };
 		23B5391B25573DE3008DF7D7 /* BehaviourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5391A25573DE3008DF7D7 /* BehaviourModel.swift */; };
+		23B5392B25574E88008DF7D7 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5392A25574E88008DF7D7 /* HealthView.swift */; };
 		9F22F485255709F3005F24B1 /* SpendingsAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */; };
 		9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */; };
 		9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4CC25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift */; };
@@ -142,6 +143,7 @@
 		23B5390825573219008DF7D7 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		23B5391625573589008DF7D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		23B5391A25573DE3008DF7D7 /* BehaviourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BehaviourModel.swift; sourceTree = "<group>"; };
+		23B5392A25574E88008DF7D7 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsAndButtonView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		2317FEAE2556B58E00E049B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23B5392925574E80008DF7D7 /* ARViews */,
 				23B538DB25570DC4008DF7D7 /* YouSpendMostItemView */,
 				9F22F483255709E2005F24B1 /* SpendingsAndButtonView */,
 				9F3013E4255704D7006C6474 /* SubscriptionHeaderView */,
@@ -491,6 +494,14 @@
 				23B5391625573589008DF7D7 /* UserModel.swift */,
 			);
 			path = UserModel;
+			sourceTree = "<group>";
+		};
+		23B5392925574E80008DF7D7 /* ARViews */ = {
+			isa = PBXGroup;
+			children = (
+				23B5392A25574E88008DF7D7 /* HealthView.swift */,
+			);
+			path = ARViews;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -834,6 +845,7 @@
 				9FB3AC89255700D8005E243A /* CategoryHeaderView.swift in Sources */,
 				23B538E225570E81008DF7D7 /* MostSpendItemView.swift in Sources */,
 				23B5386D2556CDE0008DF7D7 /* CollectionViewDataSource.swift in Sources */,
+				23B5392B25574E88008DF7D7 /* HealthView.swift in Sources */,
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
 				23B538B92556EB99008DF7D7 /* LookAtSpendingsDataSource.swift in Sources */,
