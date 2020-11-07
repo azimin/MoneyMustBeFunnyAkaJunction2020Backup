@@ -13,7 +13,7 @@ class YouSpendMostDataSource: CollectionViewDataSource {
     var state = DataSourceState.items
     var isEnabled = true
 
-    private let model: YouSpendMostItemModel
+    let model: YouSpendMostItemModel
     
     init(model: YouSpendMostItemModel) {
         self.model = model
@@ -44,7 +44,7 @@ class YouSpendMostDataSource: CollectionViewDataSource {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 230)
+        return CGSize(width: collectionView.frame.width, height: 205)
     }
 
     func collectionView(
