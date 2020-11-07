@@ -30,6 +30,7 @@
 		23B5387F2556DAB9008DF7D7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5387E2556DAB9008DF7D7 /* CollectionViewController.swift */; };
 		23B538822556DAE1008DF7D7 /* ViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538812556DAE1008DF7D7 /* ViewHolder.swift */; };
 		23B538852556DB67008DF7D7 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538842556DB67008DF7D7 /* CellModel.swift */; };
+		23B538902556DC13008DF7D7 /* LookAtSpendingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */; };
 		B815FAF394BE99FEC9F6A757 /* Pods_MoneyHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		23B5387E2556DAB9008DF7D7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		23B538812556DAE1008DF7D7 /* ViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHolder.swift; sourceTree = "<group>"; };
 		23B538842556DB67008DF7D7 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAtSpendingItemView.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +135,7 @@
 		2317FEAE2556B58E00E049B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				23B5388E2556DBF2008DF7D7 /* LookAtSpendingsItemView */,
 				2317FEE52556C9D000E049B8 /* Buttons */,
 				2317FEE12556C6E100E049B8 /* Balance */,
 				2317FEDB2556C27F00E049B8 /* RatingView */,
@@ -267,6 +270,14 @@
 				23B538732556CF1C008DF7D7 /* UICollectionView+Reusable.swift */,
 			);
 			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		23B5388E2556DBF2008DF7D7 /* LookAtSpendingsItemView */ = {
+			isa = PBXGroup;
+			children = (
+				23B5388F2556DC13008DF7D7 /* LookAtSpendingItemView.swift */,
+			);
+			path = LookAtSpendingsItemView;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -419,6 +430,7 @@
 				2317FE9B2556A04A00E049B8 /* Month.swift in Sources */,
 				2317FE982556A03500E049B8 /* Category.swift in Sources */,
 				23B538742556CF1C008DF7D7 /* UICollectionView+Reusable.swift in Sources */,
+				23B538902556DC13008DF7D7 /* LookAtSpendingItemView.swift in Sources */,
 				2317FED12556BDD800E049B8 /* ImageViewWithProgress.swift in Sources */,
 				2317FEE32556C6FE00E049B8 /* BalanceView.swift in Sources */,
 			);
