@@ -19,11 +19,21 @@ final class RatinView: UIView {
         return label
     }()
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        self.setupInitialLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private func setupInitialLayout() {
         self.addSubview(self.ratingImageView)
         self.ratingImageView.snp.makeConstraints { make in
             make.leading.top.bottom.equalToSuperview()
-            make.size.equalTo(18)
+            make.size.equalTo(16)
         }
 
         self.addSubview(self.ratingLabel)
