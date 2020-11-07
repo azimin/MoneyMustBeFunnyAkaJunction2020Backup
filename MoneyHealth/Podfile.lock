@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.0)
   - AnimatedGradientView (3.0.0)
   - FittedSheets (2.2.2)
   - Nuke (9.1.2)
@@ -11,6 +12,7 @@ PODS:
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - AnimatedGradientView
   - FittedSheets
   - Nuke
@@ -20,6 +22,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - AnimatedGradientView
     - FittedSheets
     - Nuke
@@ -29,6 +32,7 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   AnimatedGradientView: 372cc08e6fcb25e6044196fd85e87d836439f63e
   FittedSheets: e76647375838b856b7e7916021deb7e7e1527ecc
   Nuke: dd2e6be6a34c042a7861e190632781d11f253026
@@ -38,5 +42,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
 PODFILE CHECKSUM: d3fa6dd8fcff9bac7960a352e8fa1ab389c6863a
+
 
 COCOAPODS: 1.10.0

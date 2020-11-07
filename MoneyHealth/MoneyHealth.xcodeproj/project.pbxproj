@@ -55,6 +55,8 @@
 		23B538F625571AFC008DF7D7 /* YouSpendMostItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538F525571AFC008DF7D7 /* YouSpendMostItemModel.swift */; };
 		23B538F925571B21008DF7D7 /* YouSpendMostItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538F825571B21008DF7D7 /* YouSpendMostItemViewData.swift */; };
 		23B538FC2557292C008DF7D7 /* YouSpendMostDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B538FB2557292C008DF7D7 /* YouSpendMostDataSource.swift */; };
+		23B5390925573219008DF7D7 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5390825573219008DF7D7 /* ApiService.swift */; };
+		23B5391725573589008DF7D7 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B5391625573589008DF7D7 /* UserModel.swift */; };
 		9F22F485255709F3005F24B1 /* SpendingsAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */; };
 		9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */; };
 		9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4CC25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift */; };
@@ -135,6 +137,8 @@
 		23B538F525571AFC008DF7D7 /* YouSpendMostItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostItemModel.swift; sourceTree = "<group>"; };
 		23B538F825571B21008DF7D7 /* YouSpendMostItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostItemViewData.swift; sourceTree = "<group>"; };
 		23B538FB2557292C008DF7D7 /* YouSpendMostDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouSpendMostDataSource.swift; sourceTree = "<group>"; };
+		23B5390825573219008DF7D7 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		23B5391625573589008DF7D7 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		5EF678D640A05B10A9259C5F /* Pods-MoneyHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHealth.release.xcconfig"; path = "Target Support Files/Pods-MoneyHealth/Pods-MoneyHealth.release.xcconfig"; sourceTree = "<group>"; };
 		7D3626CFBACBF5177EB77F42 /* Pods_MoneyHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneyHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsAndButtonView.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				A2ECAE2525572F600032A8BD /* Protocols */,
+				23B5390725573202008DF7D7 /* Service */,
 				2317FEC22556B6D300E049B8 /* Extensions */,
 				2317FEA72556A6E900E049B8 /* Services */,
 				2317FE9225569FD100E049B8 /* Models */,
@@ -190,6 +195,7 @@
 		2317FE9225569FD100E049B8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				23B5391525573583008DF7D7 /* UserModel */,
 				9FB3AC712556EC35005E243A /* SubscriptionModel */,
 				2317FE9E2556A18B00E049B8 /* PostProcessedModels */,
 				2317FE9D2556A17B00E049B8 /* PreprocessingModels */,
@@ -463,6 +469,22 @@
 				23B538E9255715A5008DF7D7 /* MostSpendItemModel.swift */,
 			);
 			path = MostSpend;
+			sourceTree = "<group>";
+		};
+		23B5390725573202008DF7D7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				23B5390825573219008DF7D7 /* ApiService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		23B5391525573583008DF7D7 /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				23B5391625573589008DF7D7 /* UserModel.swift */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 		520A074D83EDD7594AB4DBC6 /* Pods */ = {
@@ -768,6 +790,7 @@
 				2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */,
 				9F22F4F425572921005F24B1 /* SubscriptionDetailsViewController.swift in Sources */,
 				23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */,
+				23B5391725573589008DF7D7 /* UserModel.swift in Sources */,
 				23B538C82556F6ED008DF7D7 /* PopularCategoryItemViewData.swift in Sources */,
 				23B538D02556FE90008DF7D7 /* TitleDataSource.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
@@ -797,6 +820,7 @@
 				23B538F925571B21008DF7D7 /* YouSpendMostItemViewData.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
 				9F22F4ED25571559005F24B1 /* SubscriptionsListViewController.swift in Sources */,
+				23B5390925573219008DF7D7 /* ApiService.swift in Sources */,
 				9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */,
 				23B538C42556F296008DF7D7 /* PopularCategoryItemView.swift in Sources */,
 				9FB3AC89255700D8005E243A /* CategoryHeaderView.swift in Sources */,

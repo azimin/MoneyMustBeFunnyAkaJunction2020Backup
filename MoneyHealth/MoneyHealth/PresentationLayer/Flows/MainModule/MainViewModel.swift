@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol AnyViewModelProtocol {
     func viewLoaded()
@@ -53,6 +55,8 @@ final class MainViewModel: ViewModelProtocol {
     var output: Output
     var input: Input
 
+    let apiService = APIService()
+    
     let headerModel: HeaderItemModel
     let spendingsItemModel: LookAtSpendingsItemModel
 
@@ -60,6 +64,8 @@ final class MainViewModel: ViewModelProtocol {
     let behaviorDS: YouSpendMostDataSource
 
     let collectionViewContainer: CollectionViewContainer
+
+    let disposeBag = DisposeBag()
 
     init() {
         self.output = Output()
@@ -152,5 +158,29 @@ final class MainViewModel: ViewModelProtocol {
         }
 
         self.behaviorDS.model.items.onNext(behaviourModels)
+    
+        self.apiService
+            .userAvatarURL
+            .bind(to: self.headerModel.imageURL)
+            .disposed(by: self.disposeBag)
+
+        self.apiService
+            .userName
+            .bind(to: self.headerModel.name)
+            .disposed(by: self.disposeBag)
+
+        self.apiService
+            .userHealth
+            .bind(to: self.headerModel.rating)
+            .disposed(by: self.disposeBag)
+
+        self.apiService
+            .userBalance
+            .bind(to: self.headerModel.balance)
+            .disposed(by: self.disposeBag)
+    }
+    
+    func viewLoaded() {
+        self.apiService.getUser(byID: 1)
     }
 }
