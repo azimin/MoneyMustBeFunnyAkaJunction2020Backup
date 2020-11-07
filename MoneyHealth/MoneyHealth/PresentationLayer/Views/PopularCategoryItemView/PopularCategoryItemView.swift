@@ -52,7 +52,7 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
     let periodLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .semibold)
-        label.textColor = UIColor(hex: "191919").withAlphaComponent(0.2)
+        label.textColor = UIColor.black.withAlphaComponent(0.6)
         return label
     }()
 
@@ -125,13 +125,29 @@ final class PopularCategoryItemView: UIView, GenericConfigurableCellComponent {
         self.iconImageView.backgroundColor = model.data.iconColor
 
         self.categoryTitleLabel.text = model.data.categoryTitle
-        self.periodLabel.text = model.data.periodTitle
+        self.periodLabel.text = "From last " + model.data.periodTitle
 
         if model.data.tendency > 0 {
-            self.tendencyLabel.text = String(format: "%.2f%%", model.data.tendency)
+            let productImageAttachment = NSTextAttachment()
+            productImageAttachment.image = UIImage(named: "Up")!
+            productImageAttachment.bounds = .init(x: 0, y: 0, width: 10, height: 10)
+            let productAttachmentString = NSAttributedString(attachment: productImageAttachment)
+
+            let result = NSMutableAttributedString(attributedString: productAttachmentString)
+            result.append(.init(string: " " + String(format: "%.2f%%", model.data.tendency)))
+
+            self.tendencyLabel.attributedText = result
             self.tendencyLabel.textColor = UIColor(hex: "1ED760")
         } else {
-            self.tendencyLabel.text = String(format: "%.2f%%", model.data.tendency)
+            let productImageAttachment = NSTextAttachment()
+            productImageAttachment.image = UIImage(named: "Down")!
+            productImageAttachment.bounds = .init(x: 0, y: 0, width: 10, height: 10)
+            let productAttachmentString = NSAttributedString(attachment: productImageAttachment)
+
+            let result = NSMutableAttributedString(attributedString: productAttachmentString)
+            result.append(.init(string: " " + String(format: "%.2f%%", abs(model.data.tendency))))
+
+            self.tendencyLabel.attributedText = result
             self.tendencyLabel.textColor = .red
         }
 
