@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct PopularCategoryModel: Decodable {
+    let amount: Double
+    let change: Double
+    let image_name: String
+    let name: String
+}
+
 struct PopularCategoryItemViewData: Hashable {
     
     let categoryImage: UIImage

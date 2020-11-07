@@ -179,7 +179,7 @@ final class MostSpendItemView: UIView, GenericConfigurableCellComponent {
             self.percentLabel.textColor = UIColor(hex: "FF2D6C")
         }
 
-        self.categoryLabel.text = model.data.category.rawValue
+        self.categoryLabel.text = model.data.category
         self.categoryLabel.textColor = UIColor(hex: "006F46")
         
         self.comparedLabel.text = "compared to the \(model.data.period)"

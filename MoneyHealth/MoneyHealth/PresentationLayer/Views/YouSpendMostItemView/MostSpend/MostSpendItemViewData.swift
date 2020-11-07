@@ -23,7 +23,7 @@ struct MostSpendItemViewData: Hashable {
     
     let percent: Double
     
-    let category: Category
+    let category: String
 
     let period: Period
 }
