@@ -57,6 +57,7 @@ final class MainViewModel: ViewModelProtocol {
     let spendingsItemModel: LookAtSpendingsItemModel
 
     let popularCategoriesDS: PopularCategoriesDatasource
+    let behaviorDS: YouSpendMostDataSource
 
     let collectionViewContainer: CollectionViewContainer
 
@@ -75,11 +76,15 @@ final class MainViewModel: ViewModelProtocol {
 
         self.popularCategoriesDS = PopularCategoriesDatasource()
 
+        let behaviorModel = YouSpendMostItemModel(data: .init())
+        self.behaviorDS = YouSpendMostDataSource(model: behaviorModel)
+
         self.collectionViewContainer = CollectionViewContainer(
             dataSources:
                 [
                     dataSource,
                     spendingsDS,
+                    behaviorDS,
                     titleDS,
                     popularCategoriesDS
                 ]
@@ -122,5 +127,30 @@ final class MainViewModel: ViewModelProtocol {
         
 
         self.popularCategoriesDS.items = categoryModels
+
+        let dummyBehavior = [
+            MostSpendItemViewData(
+                icon: UIImage(named: "3")!,
+                amount: 300,
+                numberOfTransactions: 12,
+                percent: 20,
+                category: .insurance,
+                period: .week
+            ),
+            MostSpendItemViewData(
+                icon: UIImage(named: "4")!,
+                amount: 1500.10,
+                numberOfTransactions: 20,
+                percent: -40,
+                category: .pets,
+                period: .week
+            ),
+        ]
+
+        let behaviourModels = dummyBehavior.map {
+            MostSpendItemModel(data: $0)
+        }
+
+        self.behaviorDS.model.items.onNext(behaviourModels)
     }
 }
