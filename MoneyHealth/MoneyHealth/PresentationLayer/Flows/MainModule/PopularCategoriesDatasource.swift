@@ -34,6 +34,15 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<PopularCategoryItemView>.self, indexPath: indexPath)
         cell.customSubview.configure(with: self.items[indexPath.row])
+
+        if indexPath.row == 0 {
+            cell.customSubview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        } else if indexPath.row == self.items.count - 1 {
+            cell.customSubview.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        } else {
+            cell.customSubview.layer.maskedCorners = []
+        }
+
         return cell
     }
 
@@ -44,7 +53,7 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 88)
+        return CGSize(width: collectionView.frame.width - 32, height: 88)
     }
 
     func collectionView(
@@ -64,7 +73,7 @@ class PopularCategoriesDatasource: CollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .zero
+        return .init(top: 0, left: 16, bottom: 0, right: 16)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}

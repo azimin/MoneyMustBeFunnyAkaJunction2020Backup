@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "ist_card.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "width" : 0.050000000000000003
+  }
+}

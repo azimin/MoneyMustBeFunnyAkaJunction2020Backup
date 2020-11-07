@@ -24,6 +24,8 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         super.init(container: viewModel.collectionViewContainer)
 
         self.tabBarItem = .init(title: "Reccomendations", image: UIImage(named: "tab_bar_reccomendations"), selectedImage: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showAR), name: .init(rawValue: "pushAR"), object: nil)
     }
     
     required init?(coder _: NSCoder) {
@@ -36,9 +38,14 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         self.viewModel.viewLoaded()
     }
     
-    func bindOutput() {
-    }
+    func bindOutput() { }
 
-    func bindInput() {
+    func bindInput() { }
+
+    @objc
+    func showAR() {
+        let arVC = UIStoryboard(name: "AR", bundle: nil).instantiateInitialViewController()!
+        arVC.modalPresentationStyle = .fullScreen
+        self.present(arVC, animated: true, completion: nil)
     }
 }
