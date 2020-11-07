@@ -65,7 +65,7 @@ class LookAtSpendingsDataSource: CollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 31, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {}

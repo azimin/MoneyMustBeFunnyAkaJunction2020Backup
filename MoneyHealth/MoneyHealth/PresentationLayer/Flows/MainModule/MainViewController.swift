@@ -23,9 +23,11 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
         
         super.init(container: viewModel.collectionViewContainer)
 
-        self.tabBarItem = .init(title: "Reccomendations", image: UIImage(named: "tab_bar_reccomendations"), selectedImage: nil)
+        self.tabBarItem = .init(title: "Recommendations", image: UIImage(named: "tab_bar_reccomendations"), selectedImage: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.showAR), name: .init(rawValue: "pushAR"), object: nil)
+
+        self.title = "Recommendations"
     }
     
     required init?(coder _: NSCoder) {

@@ -63,11 +63,12 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
         }
 
         self.addSubview(self.collectionView)
+        self.collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         self.collectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.leading.equalToSuperview()
             make.height.equalTo(138)
             make.trailing.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(24)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(16)
             make.bottom.equalToSuperview()
         }
     }
@@ -93,11 +94,11 @@ final class YouSpendMostItemView: UIView, UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 308, height: 138)
+        return CGSize(width: 308, height: 146)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 16
+        return 0
     }
 
     func configure(with model: YouSpendMostItemModel) {
