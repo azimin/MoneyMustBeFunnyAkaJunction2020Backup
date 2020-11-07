@@ -21,6 +21,8 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
 
         self.title = "Subscriptions"
         self.tabBarItem = .init(title: "Subscriptions", image: UIImage(named: "tab_bar_subscriptions"), selectedImage: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pushAllSubscriptions), name: .init(rawValue: "pushAllSubscriptions"), object: nil)
     }
 
     required init?(coder _: NSCoder) {
@@ -35,5 +37,10 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
     }
 
     func bindInput() {
+    }
+
+    @objc func pushAllSubscriptions() {
+        let viewController = SubscriptionsListViewController(viewModel: .init())
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

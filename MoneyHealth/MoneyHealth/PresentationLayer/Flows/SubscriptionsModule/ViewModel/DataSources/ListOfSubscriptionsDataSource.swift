@@ -27,18 +27,18 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
     }
 
     var numberOfSections: Int {
-        return 2
+        return 1
     }
 
     func numberOfItems(inSection section: Int) -> Int {
-        return section == 0 ? 1 : 10
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<CategoryHeaderView>.self, indexPath: indexPath)
-            cell.customSubview.titleLabel.text = "People similar to you subscribe"
+            cell.customSubview.titleLabel.text = "All Subscriptions"
             return cell
         } else {
             let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionView>.self, indexPath: indexPath)
@@ -66,7 +66,7 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             return CGSize(
                 width: self.collectionView.frame.width,
                 height: 26
@@ -92,7 +92,7 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
     ) -> UIEdgeInsets {
-        return .init(top: section == 0 ? 0 : 28, left: 0, bottom: 0, right: 0)
+        return .init(top: 0, left: 0, bottom: 0, right: 0)
     }
 
     func collectionView(

@@ -58,6 +58,10 @@
 		9F22F485255709F3005F24B1 /* SpendingsAndButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */; };
 		9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */; };
 		9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4CC25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift */; };
+		9F22F4EC25571559005F24B1 /* SubscriptionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4E925571558005F24B1 /* SubscriptionsListView.swift */; };
+		9F22F4ED25571559005F24B1 /* SubscriptionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4EA25571559005F24B1 /* SubscriptionsListViewController.swift */; };
+		9F22F4EE25571559005F24B1 /* SubscriptionsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4EB25571559005F24B1 /* SubscriptionsListViewModel.swift */; };
+		9F22F4F425572921005F24B1 /* SubscriptionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22F4F325572921005F24B1 /* SubscriptionDetailsViewController.swift */; };
 		9F3013E6255704E1006C6474 /* SubscriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */; };
 		9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */; };
 		9FB3AC732556EC3F005E243A /* SubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */; };
@@ -130,6 +134,10 @@
 		9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingsAndButtonView.swift; sourceTree = "<group>"; };
 		9F22F4C825570BA1005F24B1 /* UIImage+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Gradient.swift"; sourceTree = "<group>"; };
 		9F22F4CC25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalSubscriptionsDataSource.swift; sourceTree = "<group>"; };
+		9F22F4E925571558005F24B1 /* SubscriptionsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsListView.swift; sourceTree = "<group>"; };
+		9F22F4EA25571559005F24B1 /* SubscriptionsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsListViewController.swift; sourceTree = "<group>"; };
+		9F22F4EB25571559005F24B1 /* SubscriptionsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsListViewModel.swift; sourceTree = "<group>"; };
+		9F22F4F325572921005F24B1 /* SubscriptionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionDetailsViewController.swift; sourceTree = "<group>"; };
 		9F3013E5255704E1006C6474 /* SubscriptionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionHeaderView.swift; sourceTree = "<group>"; };
 		9FB3AC6E2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSubscriptionsDataSource.swift; sourceTree = "<group>"; };
 		9FB3AC722556EC3F005E243A /* SubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionModel.swift; sourceTree = "<group>"; };
@@ -387,6 +395,8 @@
 		23B538A22556E280008DF7D7 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				9F22F4F2255728F2005F24B1 /* SubscriptionDetailsModule */,
+				9F22F4E8255714C9005F24B1 /* SubscriptionsListModule */,
 				9FB3AC7E2556FD1B005E243A /* Navigation */,
 				9FCA09202556E94100FA4791 /* SubscriptionsModule */,
 				23B538A32556E288008DF7D7 /* MainModule */,
@@ -455,6 +465,24 @@
 				9F22F484255709F3005F24B1 /* SpendingsAndButtonView.swift */,
 			);
 			path = SpendingsAndButtonView;
+			sourceTree = "<group>";
+		};
+		9F22F4E8255714C9005F24B1 /* SubscriptionsListModule */ = {
+			isa = PBXGroup;
+			children = (
+				9F22F4E925571558005F24B1 /* SubscriptionsListView.swift */,
+				9F22F4EA25571559005F24B1 /* SubscriptionsListViewController.swift */,
+				9F22F4EB25571559005F24B1 /* SubscriptionsListViewModel.swift */,
+			);
+			path = SubscriptionsListModule;
+			sourceTree = "<group>";
+		};
+		9F22F4F2255728F2005F24B1 /* SubscriptionDetailsModule */ = {
+			isa = PBXGroup;
+			children = (
+				9F22F4F325572921005F24B1 /* SubscriptionDetailsViewController.swift */,
+			);
+			path = SubscriptionDetailsModule;
 			sourceTree = "<group>";
 		};
 		9F3013E4255704D7006C6474 /* SubscriptionHeaderView */ = {
@@ -692,11 +720,13 @@
 				2317FE9425569FDA00E049B8 /* Transaction.swift in Sources */,
 				23B538DD25570DD5008DF7D7 /* YouSpendMostItemView.swift in Sources */,
 				2317FEC02556B6B900E049B8 /* ProgressView.swift in Sources */,
+				9F22F4F425572921005F24B1 /* SubscriptionDetailsViewController.swift in Sources */,
 				23B538B32556E4F2008DF7D7 /* HeaderItemModel.swift in Sources */,
 				23B538C82556F6ED008DF7D7 /* PopularCategoryItemViewData.swift in Sources */,
 				23B538D02556FE90008DF7D7 /* TitleDataSource.swift in Sources */,
 				2317FED92556C17700E049B8 /* HeaderView.swift in Sources */,
 				9FB3AC852557009E005E243A /* ListOfSubscriptionsDataSource.swift in Sources */,
+				9F22F4EC25571559005F24B1 /* SubscriptionsListView.swift in Sources */,
 				9F22F4C925570BA1005F24B1 /* UIImage+Gradient.swift in Sources */,
 				23B538852556DB67008DF7D7 /* CellModel.swift in Sources */,
 				23B538EA255715A5008DF7D7 /* MostSpendItemModel.swift in Sources */,
@@ -708,6 +738,7 @@
 				9FB3AC802556FD2B005E243A /* NavigationViewController.swift in Sources */,
 				23B538BF2556EBE5008DF7D7 /* LookAtSpendingsItemModel.swift in Sources */,
 				9FB3AC792556F3D7005E243A /* SubscriptionsCarouselView.swift in Sources */,
+				9F22F4EE25571559005F24B1 /* SubscriptionsListViewModel.swift in Sources */,
 				23B538CB2556F76C008DF7D7 /* PopularCategoryItemModel.swift in Sources */,
 				23B538B02556E472008DF7D7 /* HeaderItemViewData.swift in Sources */,
 				23B538A92556E30B008DF7D7 /* MainViewModel.swift in Sources */,
@@ -718,6 +749,7 @@
 				9F22F4CD25570DD6005F24B1 /* TotalSubscriptionsDataSource.swift in Sources */,
 				23B538F925571B21008DF7D7 /* YouSpendMostItemViewData.swift in Sources */,
 				23B538942556DD5A008DF7D7 /* SpendingView.swift in Sources */,
+				9F22F4ED25571559005F24B1 /* SubscriptionsListViewController.swift in Sources */,
 				9FB3AC6F2556EC11005E243A /* HorizontalSubscriptionsDataSource.swift in Sources */,
 				23B538C42556F296008DF7D7 /* PopularCategoryItemView.swift in Sources */,
 				9FB3AC89255700D8005E243A /* CategoryHeaderView.swift in Sources */,
