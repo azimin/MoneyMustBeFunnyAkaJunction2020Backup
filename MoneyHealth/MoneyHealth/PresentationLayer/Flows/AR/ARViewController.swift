@@ -10,6 +10,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     
     @IBOutlet weak var blurView: UIVisualEffectView!
+
+    let closeButton = UIButton()
     
     /// The view controller that displays the status and "restart experience" UI.
     lazy var statusViewController: StatusViewController = {
@@ -44,7 +46,24 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         thumbView.backgroundColor = .red
         thumbView.frame.size = .init(width: 16, height: 16)
         self.sceneView.addSubview(thumbView)
-        
+
+        self.closeButton.setTitle("CLOSE", for: .normal)
+        self.closeButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
+        self.closeButton.setTitleColor(.black, for: .normal)
+        self.closeButton.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        self.closeButton.layer.cornerRadius = 12
+        self.view.addSubview(self.closeButton)
+        self.closeButton.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().inset(16)
+            make.width.equalTo(60)
+            make.top.equalToSuperview().inset(40)
+        }
+        self.closeButton.addTarget(self, action: #selector(self.closeScreen), for: .touchUpInside)
+    }
+
+    @objc
+    func closeScreen() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {

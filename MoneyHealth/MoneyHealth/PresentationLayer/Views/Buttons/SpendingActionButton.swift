@@ -19,7 +19,6 @@ final class SpendingActionButton: UIControl {
         case .main:
             self.iconImageView.image = UIImage(named: "AR")
             self.titleLabel.text = "Spendings in AR"
-            self.gradientView.isHidden = true
         }
     }
 
@@ -82,6 +81,10 @@ final class SpendingActionButton: UIControl {
         self.gradientView2.isUserInteractionEnabled = false
         self.gradientView2.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
+            self.gradientView2.isHidden = true
         }
 
         gradientView2.autoAnimate = true
