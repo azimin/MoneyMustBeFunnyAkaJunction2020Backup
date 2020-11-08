@@ -1,10 +1,10 @@
 # MoneyMustBeFunnyAkaJunction2020
 
-## Video about this app
-[![Alt text](https://img.youtube.com/vi/Zc7ce9MxTNg/0.jpg)](https://www.youtube.com/watch?v=Zc7ce9MxTNg&feature=youtu.be)
-
 ## AR Demo
 ![](ar_demo.gif)
+
+## Video about this app
+[![Alt text](https://img.youtube.com/vi/Zc7ce9MxTNg/0.jpg)](https://www.youtube.com/watch?v=Zc7ce9MxTNg&feature=youtu.be)
 
 ## To run this App you need to have Xcode 12.1
 This app include CocoaPods:
