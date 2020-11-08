@@ -45,3 +45,24 @@ struct SubscriptionModel: Decodable {
         return SubscriptionToStyleService.nameToColor(name: self.name)
     }
 }
+
+
+struct RecommendedSubscriptionModel: Decodable {
+    var name: String
+    var category: String
+    var match: Double
+
+    enum CodingKeys: String, CodingKey {
+        case name = "service_name"
+        case category = "service_category"
+        case match = "score"
+    }
+
+    var image: UIImage? {
+        return SubscriptionToStyleService.nameToImage(name: self.name)
+    }
+
+    var backgroundColor: UIColor {
+        return SubscriptionToStyleService.nameToColor(name: self.name)
+    }
+}

@@ -1,8 +1,8 @@
 //
-//  SubscriptionsCarouselView.swift
+//  RecommendedSubscriptionsCarouselView.swift
 //  MoneyHealth
 //
-//  Created by Alexander on 11/7/20.
+//  Created by Alexander on 11/8/20.
 //
 
 import UIKit
@@ -10,35 +10,26 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GenericCellSubview {
+final class RecommendedSubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GenericCellSubview {
 
     var disposeBag = DisposeBag()
 
     let titleLabel: UILabel = {
        let label = UILabel()
-        label.text = "Upcoming write-offs"
+        label.text = "People similar to you subscribe"
         label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .black
         return label
     }()
 
-    func updateStyle(style: HorizontalSubscriptionsDataSource.Style) {
-        switch style {
-        case .upcomming:
-            self.titleLabel.text = "Upcoming write-offs"
-        case .recommended:
-            self.titleLabel.text = "People similar to you subscribe"
-        }
-    }
-
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
 
-    var items = [SubscriptionModel]()
+    var items = [RecommendedSubscriptionModel]()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        APIService.shared.nextSubscriptions
+        APIService.shared.recommendedSubscriptions
             .subscribe(onNext: { values in
                 self.items = values
                 self.collectionView.reloadData()
@@ -94,7 +85,7 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionView>.self, indexPath: indexPath)
-        cell.customSubview.setup(config: self.items[indexPath.row], shouldShowNextDate: true)
+        cell.customSubview.setup(config: self.items[indexPath.row])
         return cell
     }
 
@@ -112,3 +103,4 @@ final class SubscriptionsCarouselView: UIView, UICollectionViewDataSource, UICol
 
     func bindOutput(from model: LookAtSpendingsItemModel) { }
 }
+

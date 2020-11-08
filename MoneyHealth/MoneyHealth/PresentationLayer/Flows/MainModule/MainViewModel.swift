@@ -152,5 +152,10 @@ final class MainViewModel: ViewModelProtocol {
             print(value)
         })
         .disposed(by: self.disposeBag)
+
+        self.apiService.getRecommendedSubscriptions(byUserId: 1).subscribe(onSuccess: { value in
+            print(value)
+        })
+        .disposed(by: self.disposeBag)
     }
 }

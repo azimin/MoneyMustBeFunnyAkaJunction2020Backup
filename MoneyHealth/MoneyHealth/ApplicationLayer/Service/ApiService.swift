@@ -22,6 +22,7 @@ class APIService {
 
     let nextSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
     let activeSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
+    let recommendedSubscriptions = BehaviorSubject<[RecommendedSubscriptionModel]>(value: [])
     
     static let shared = APIService()
 
@@ -183,6 +184,25 @@ class APIService {
 
                 let subscriptions = try! decoder.decode([SubscriptionModel].self, from: jsonData)
                 self?.activeSubscriptions.onNext(subscriptions)
+                single(.success(subscriptions))
+            }
+            return Disposables.create()
+        }
+    }
+
+    func getRecommendedSubscriptions(byUserId id: Int) -> Single<[RecommendedSubscriptionModel]> {
+        return Single<[RecommendedSubscriptionModel]>.create { single in
+            AF.request(
+                "http://195.91.231.34:5000/user/subscription_prediction/\(id)/",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let decoder = JSONDecoder()
+                guard let jsonData = json.data else {
+                    return
+                }
+
+                let subscriptions = try! decoder.decode([RecommendedSubscriptionModel].self, from: jsonData)
+                self?.recommendedSubscriptions.onNext(subscriptions)
                 single(.success(subscriptions))
             }
             return Disposables.create()

@@ -22,7 +22,8 @@ final class HorizontalSubscriptionsDataSource: CollectionViewDataSource {
 
     var cellsForRegistration: [CollectionViewCell.Type]? {
         return [
-            GenericCollectionViewCell<SubscriptionsCarouselView>.self
+            GenericCollectionViewCell<SubscriptionsCarouselView>.self,
+            GenericCollectionViewCell<RecommendedSubscriptionsCarouselView>.self
         ]
     }
 
@@ -41,14 +42,21 @@ final class HorizontalSubscriptionsDataSource: CollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionsCarouselView>.self, indexPath: indexPath)
-        cell.customSubview.updateStyle(style: self.style)
-        return cell
+
+        switch self.style {
+        case .upcomming:
+            let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionsCarouselView>.self, indexPath: indexPath)
+            cell.customSubview.updateStyle(style: self.style)
+            return cell
+        case .recommended:
+            let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<RecommendedSubscriptionsCarouselView>.self, indexPath: indexPath)
+            return cell
+        }
+
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-
     }
 
     func collectionView(

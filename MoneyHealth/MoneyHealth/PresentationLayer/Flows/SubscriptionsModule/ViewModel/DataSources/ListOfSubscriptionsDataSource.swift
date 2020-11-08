@@ -52,7 +52,8 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCellWithType(GenericCollectionViewCell<SubscriptionView>.self, indexPath: indexPath)
             cell.customSubview.setup(
-                config: self.items[indexPath.row]
+                config: self.items[indexPath.row],
+                shouldShowNextDate: false
             )
             return cell
         }

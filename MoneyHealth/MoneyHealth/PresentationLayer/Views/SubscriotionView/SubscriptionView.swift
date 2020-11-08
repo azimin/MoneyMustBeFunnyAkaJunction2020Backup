@@ -108,7 +108,7 @@ final class SubscriptionView: UIView, GenericCellSubview {
         }
     }
 
-    func setup(config: SubscriptionModel) {
+    func setup(config: SubscriptionModel, shouldShowNextDate: Bool) {
         let color = config.backgroundColor
         self.backgroundColor = color
 
@@ -120,10 +120,41 @@ final class SubscriptionView: UIView, GenericCellSubview {
             label.textColor = labelColor
         }
 
+        if shouldShowNextDate {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "E, d MMMM"
+            formatter.timeZone = TimeZone(secondsFromGMT: 0)
+            formatter.locale = Locale.current
+            self.paymentLabel.text = formatter.string(from: config.nextCharge)
+        } else {
+            self.paymentLabel.text = "Monthly payment"
+        }
+
         self.priceLabel.text = "\(config.amount)"
         self.serviceNameLabel.text = "\(config.name)"
         self.serviceCategoryLabel.text = "\(config.category)"
         
+        self.serviceImageView.image = config.image
+    }
+
+    func setup(config: RecommendedSubscriptionModel) {
+        let color = config.backgroundColor
+        self.backgroundColor = color
+
+        let whiteContrast = color.contrastRatio(with: UIColor.white)
+        let blackContrast = color.contrastRatio(with: UIColor.black)
+
+        let labelColor = whiteContrast > blackContrast ? UIColor.white : UIColor.black
+        for label in [self.priceLabel, self.currencyLabel, self.paymentLabel, self.serviceNameLabel, self.serviceCategoryLabel]  {
+            label.textColor = labelColor
+        }
+
+        self.currencyLabel.isHidden = true
+        self.priceLabel.text = "\(Int(config.match * 100))%"
+        self.paymentLabel.text = "Match"
+        self.serviceNameLabel.text = "\(config.name)"
+        self.serviceCategoryLabel.text = "\(config.category)"
+
         self.serviceImageView.image = config.image
     }
 }

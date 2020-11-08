@@ -24,11 +24,17 @@ final class SpendingsAndButtonView: UIView, GenericCellSubview, ReusableComponen
         switch style {
         case .subscriptions:
             self.balanceView.titleLabel.text = "Recurent payments per month"
+
+            let balance = (try? APIService.shared.subscrptionPayment.value()) ?? 0
+            self.balanceView.balanceLabel.text = String(format: "€%.2f%", balance)
         case .main:
             self.balanceView.titleLabel.text = "Total Balance"
         case .subscriptionsAll:
             self.balanceView.titleLabel.text = "Recurent payments per month"
             self.spendingActionButton.isHidden = true
+
+            let balance = (try? APIService.shared.subscrptionPayment.value()) ?? 0
+            self.balanceView.balanceLabel.text = String(format: "€%.2f%", balance)
         }
     }
 
