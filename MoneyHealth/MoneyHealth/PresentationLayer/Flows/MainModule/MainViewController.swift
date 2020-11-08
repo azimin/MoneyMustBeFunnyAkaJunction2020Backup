@@ -63,9 +63,12 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
             make.width.equalTo(260)
             make.height.equalTo(221)
         }
+        healthView.backgroundColor = .clear
+        healthView.isOpaque = false
         healthView.layoutIfNeeded()
 
         let image = imageWithView(view: healthView)
+        ARImageStoreService.shared.forceHealthImage = image
 
         let arVC = UIStoryboard(name: "AR", bundle: nil).instantiateInitialViewController()!
         arVC.modalPresentationStyle = .fullScreen

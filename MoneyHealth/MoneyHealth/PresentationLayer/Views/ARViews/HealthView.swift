@@ -36,6 +36,7 @@ final class HealthView: UIView {
     let titleBalanceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
+        label.text = "Total Balance"
         label.font = .systemFont(ofSize: 17, weight: .bold)
         return label
     }()
@@ -180,28 +181,13 @@ final class HealthView: UIView {
         self.addSubview(titleBalanceLabel)
         self.titleBalanceLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.top.equalTo(self.helthContanerView.snp.bottom).offset(36)
+            make.top.equalTo(self.helthContanerView.snp.bottom).offset(20)
         }
 
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 0
-        stackView.alignment = .leading
-        stackView.distribution = .fill
-
-        stackView.addArrangedSubview(self.balanceLabel)
-        stackView.addArrangedSubview(self.periodLabel)
-
-        self.addSubview(stackView)
-        stackView.snp.makeConstraints { make in
+        self.addSubview(balanceLabel)
+        self.balanceLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview()
-            make.centerY.equalToSuperview()
-        }
-        
-        self.addSubview(periodLabel)
-        self.periodLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.equalTo(self.balanceLabel.snp.bottom).offset(16)
+            make.top.equalTo(self.titleBalanceLabel.snp.bottom).offset(2)
         }
 
         self.addSubview(self.totalSpending)
@@ -214,6 +200,12 @@ final class HealthView: UIView {
         self.spendingsChangeLabel.snp.makeConstraints { make in
             make.leading.equalTo(self.totalSpending.snp.trailing).offset(20)
             make.bottom.equalToSuperview()
+        }
+
+        self.addSubview(periodLabel)
+        self.periodLabel.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.bottom.equalTo(self.totalSpending.snp.top).inset(-2)
         }
     }
 }

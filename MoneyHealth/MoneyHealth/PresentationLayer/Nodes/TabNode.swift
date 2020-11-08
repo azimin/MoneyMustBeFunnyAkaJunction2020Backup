@@ -32,9 +32,11 @@ class TabNode: SCNNode {
         boxNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "tab_selection")
         self.addChildNode(boxNode)
         self.navigationNode = boxNode
-        
-        let fakeBalance = SCNPlane(width: 0.1, height: 0.1)
-        fakeBalance.firstMaterial?.diffuse.contents = UIImage(named: "fake-balance")
+
+        let image = ARImageStoreService.shared.healthImage!
+        let aspect = image.size.width / image.size.height
+        let fakeBalance = SCNPlane(width: 0.1, height: 0.1 / aspect)
+        fakeBalance.firstMaterial?.diffuse.contents = image
         let fakeBalanceNode = SCNNode(geometry: fakeBalance)
         fakeBalanceNode.eulerAngles.x = -.pi / 2
         fakeBalanceNode.position.z = Float(fakeBalance.height / 2) + 0.012
