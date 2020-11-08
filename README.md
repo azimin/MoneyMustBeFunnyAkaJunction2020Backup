@@ -22,6 +22,6 @@ https://github.com/antoleb/saavi_back/blob/main/resourses/new_sub.csv
 2. Use your own signing
 3. Install app on device that supports iOS 14 or iOS 13 (last version haven't been tested on iOS 13)
 4. Open AR part
-5. Download following image: https://github.com/Barbatosso/MoneyMustBeFunnyAkaJunction2020/blob/main/MoneyHealth/MoneyHealth/Assets.xcassets/AR%20Resources.arresourcegroup/ist_card.arreferenceimage/ist_card.jpg
+5. Download following image: https://github.com/azimin/MoneyMustBeFunnyAkaJunction2020Backup/tree/main/MoneyHealth/MoneyHealth/Assets.xcassets/AR%20Resources.arresourcegroup/ist_card.arreferenceimage
 6. Open this image (for example on computer) or print it
 7. Point the camera to this image
