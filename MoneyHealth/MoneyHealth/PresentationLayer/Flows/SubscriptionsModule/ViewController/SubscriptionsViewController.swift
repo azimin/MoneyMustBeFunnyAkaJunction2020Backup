@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FittedSheets
 
 final class SubscriptionsViewController: CollectionViewController<SubscriptionsView>, ControllerProtocol {
     typealias ViewModelType = SubscriptionsViewModel
@@ -40,6 +41,11 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
     }
 
     @objc func pushAllSubscriptions() {
+        let controller = SubscriptionDetailsViewController(subscription: (try! APIService.shared.nextSubscriptions.value()).first!)
+        let sheetController = SheetViewController(controller: controller)
+        self.present(sheetController, animated: true, completion: nil)
+
+        return
         let viewController = SubscriptionsListViewController(viewModel: .init())
         self.navigationController?.pushViewController(viewController, animated: true)
     }

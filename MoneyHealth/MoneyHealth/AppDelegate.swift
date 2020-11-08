@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController.tabBar.standardAppearance = appearance
 
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.overrideUserInterfaceStyle = .light
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         return true
