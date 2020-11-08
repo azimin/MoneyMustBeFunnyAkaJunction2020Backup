@@ -211,7 +211,7 @@ extension ViewController: ARSessionDelegate {
         }
         
         if velocities.count > 3 {
-            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.015, self.isTransitionInProgress == false {
+            if sign(velocities[velocities.count - 1]) != sign(velocities[velocities.count - 2]) && velocities[0..<velocities.count - 1].map { abs($0) }.reduce(0, +) / Float(velocities.count - 1) > 0.03, self.isTransitionInProgress == false {
                 print("shake!!!")
                 self.velocities.removeAll()
                 self.lastRotation = nil
