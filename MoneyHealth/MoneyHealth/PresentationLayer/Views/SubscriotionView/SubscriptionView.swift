@@ -109,7 +109,7 @@ final class SubscriptionView: UIView, GenericCellSubview {
     }
 
     func setup(config: SubscriptionModel) {
-        let color = UIColor(hex: config.backgroundColor)
+        let color = config.backgroundColor
         self.backgroundColor = color
 
         let whiteContrast = color.contrastRatio(with: UIColor.white)
@@ -124,7 +124,7 @@ final class SubscriptionView: UIView, GenericCellSubview {
         self.serviceNameLabel.text = "\(config.name)"
         self.serviceCategoryLabel.text = "\(config.category)"
         
-        self.serviceImageView.image = UIImage(named: config.imageName)
+        self.serviceImageView.image = config.image
     }
 }
 

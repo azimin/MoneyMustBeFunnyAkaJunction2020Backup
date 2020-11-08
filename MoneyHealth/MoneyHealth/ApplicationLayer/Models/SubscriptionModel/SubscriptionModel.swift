@@ -37,11 +37,11 @@ struct SubscriptionModel: Decodable {
         case nextChargeString = "next_charge"
     }
 
-    var imageName: String {
-        return ""
+    var image: UIImage? {
+        return SubscriptionToStyleService.nameToImage(name: self.name)
     }
 
-    var backgroundColor: String {
-        return ""
+    var backgroundColor: UIColor {
+        return SubscriptionToStyleService.nameToColor(name: self.name)
     }
 }
