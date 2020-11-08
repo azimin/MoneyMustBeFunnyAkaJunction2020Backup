@@ -27,6 +27,10 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.showAR), name: .init(rawValue: "pushAR"), object: nil)
 
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showVideo), name: .init(rawValue: "pushVideo"), object: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSubscriptionsTab), name: .init(rawValue: "pushTabSubscription"), object: nil)
+
         self.title = "Recommendations"
     }
     
@@ -45,10 +49,21 @@ final class MainViewController: CollectionViewController<MainView>, ControllerPr
     func bindInput() { }
 
     @objc
-    func showAR() {
-        let balance = try! APIService.shared.userBalance.value()
-        let helthScore = try! APIService.shared.userHealth.value()
+    func showVideo() {
+        guard let stories = try? APIService.shared.stories.value(), let video = stories.storiesVideo else {
+            return
+        }
+        let viewController = StoryViewController(url: video)
+        self.present(viewController, animated: true, completion: nil)
+    }
 
+    @objc
+    func showSubscriptionsTab() {
+        self.tabBarController?.selectedIndex = 1
+    }
+
+    @objc
+    func showAR() {
         let user = (try? APIService.shared.user.value()) ?? UserModel(user_name: "", user_health: 4.5, user_avatar_url: "", user_balance: 2500, user_month_subscribtion_payment: 0, user_spend_this_month: 200, spend_change: 0.2)
 
         let healthView = HealthView(

@@ -66,3 +66,17 @@ struct RecommendedSubscriptionModel: Decodable {
         return SubscriptionToStyleService.nameToColor(name: self.name)
     }
 }
+
+struct StoriesModel: Decodable {
+    var moneyGo: String?
+    var subscriptions: String?
+    var tryAR: String?
+    var storiesVideo: String?
+
+    enum CodingKeys: String, CodingKey {
+        case moneyGo = "money_go"
+        case subscriptions = "subscriptions"
+        case tryAR = "try_ar"
+        case storiesVideo = "stories_video"
+    }
+}

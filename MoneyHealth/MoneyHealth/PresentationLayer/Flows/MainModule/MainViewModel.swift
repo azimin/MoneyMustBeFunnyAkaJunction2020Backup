@@ -96,21 +96,27 @@ final class MainViewModel: ViewModelProtocol {
                 ]
         )
 
-        let dummyItems = [
-            SpendingViewData(title: "Hello", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
-            SpendingViewData(title: "Guys", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
-            SpendingViewData(title: "How are you", imageUrl: URL(string: "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/fdb0f429-e363-4e5c-8429-cd2db7a604c2/280x420")!),
-        ]
-
-        let models = dummyItems.map {
-            SpendingItemModel(data: $0)
-        }
-
-        self.spendingsItemModel.items.onNext(models)
     
         self.apiService
             .userAvatarURL
             .bind(to: self.headerModel.imageURL)
+            .disposed(by: self.disposeBag)
+
+        self.apiService
+            .stories
+            .subscribe(onNext: { stories in
+                var models: [SpendingItemModel] = []
+                if let value = stories?.subscriptions {
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .subsr)))
+                }
+                if let value = stories?.moneyGo {
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .video)))
+                }
+                if let value = stories?.tryAR {
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .ar)))
+                }
+                self.spendingsItemModel.items.onNext(models)
+            })
             .disposed(by: self.disposeBag)
 
         self.apiService
@@ -154,6 +160,11 @@ final class MainViewModel: ViewModelProtocol {
         .disposed(by: self.disposeBag)
 
         self.apiService.getRecommendedSubscriptions(byUserId: 1).subscribe(onSuccess: { value in
+            print(value)
+        })
+        .disposed(by: self.disposeBag)
+
+        self.apiService.getStories(byUserId: 1).subscribe(onSuccess: { value in
             print(value)
         })
         .disposed(by: self.disposeBag)

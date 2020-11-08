@@ -89,6 +89,24 @@ final class LookAtSpendingItemView: UIView, UICollectionViewDataSource, UICollec
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+
+        switch self.items[indexPath.row].data.style {
+            case .ar:
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushAR"),
+                    object: nil
+                )
+            case .subsr:
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushTabSubscription"),
+                    object: nil
+                )
+            case .video:
+                NotificationCenter.default.post(
+                    name: .init(rawValue: "pushVideo"),
+                    object: nil
+                )
+        }
         
         self.items[indexPath.row].onTap?()
     }

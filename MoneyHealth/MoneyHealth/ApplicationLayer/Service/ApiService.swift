@@ -23,6 +23,8 @@ class APIService {
     let nextSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
     let activeSubscriptions = BehaviorSubject<[SubscriptionModel]>(value: [])
     let recommendedSubscriptions = BehaviorSubject<[RecommendedSubscriptionModel]>(value: [])
+
+    let stories = BehaviorSubject<StoriesModel?>(value: nil)
     
     static let shared = APIService()
 
@@ -204,6 +206,26 @@ class APIService {
                 let subscriptions = try! decoder.decode([RecommendedSubscriptionModel].self, from: jsonData)
                 self?.recommendedSubscriptions.onNext(subscriptions)
                 single(.success(subscriptions))
+            }
+            return Disposables.create()
+        }
+    }
+
+    func getStories(byUserId id: Int) -> Single<StoriesModel> {
+        return Single<StoriesModel>.create { single in
+            AF.request(
+                "http://195.91.231.34:5000/user/stories/\(id)/",
+                method: .get
+            ).responseJSON { [weak self] json in
+                let decoder = JSONDecoder()
+                guard let jsonData = json.data else {
+                    return
+                }
+
+//                let subscriptions = try! decoder.decode([StoriesModel].self, from: jsonData)
+                var subscriptions: [StoriesModel] = [StoriesModel(moneyGo: "http://195.91.231.34:5000/images/MoneyGoes.png", subscriptions: "http://195.91.231.34:5000/images/Subscriptions.png", tryAR: "http://195.91.231.34:5000/images/AR.png", storiesVideo: "http://195.91.231.34:5000/images/Stor2.mp4")]
+                self?.stories.onNext(subscriptions.first)
+                single(.success(subscriptions.first!))
             }
             return Disposables.create()
         }
