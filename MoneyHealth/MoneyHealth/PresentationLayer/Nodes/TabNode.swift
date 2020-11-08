@@ -19,6 +19,7 @@ class TabNode: SCNNode {
             boxNode.position.x = Float(i) * Float(box.width) * 2
             boxNode.eulerAngles.x = -.pi / 2
             boxNode.geometry?.firstMaterial?.diffuse.contents = icons[i]
+            boxNode.opacity = i == 0 ? 0.9 : 0.5
             self.tabNodes.append(boxNode)
             self.addChildNode(boxNode)
         }
@@ -26,7 +27,8 @@ class TabNode: SCNNode {
         let box = SCNPlane(width: 0.014, height: 0.014)
         let boxNode = SCNNode(geometry: box)
         boxNode.pivot = SCNMatrix4MakeTranslation(-Float(box.width) / 2, 0, 0)
-        boxNode.position.x = 0.01 * 2 - 0.004 / 2
+        let x = (0.01 * Float(0) * 2) - 0.004 / 2
+        boxNode.position.x = x
         boxNode.position.y = -0.0001
         boxNode.eulerAngles.x = -.pi / 2
         boxNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "tab_selection")
