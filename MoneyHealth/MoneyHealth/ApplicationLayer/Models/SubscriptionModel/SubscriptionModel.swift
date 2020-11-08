@@ -74,9 +74,9 @@ struct StoriesModel: Decodable {
     var storiesVideo: String?
 
     enum CodingKeys: String, CodingKey {
-        case moneyGo = "money_go"
-        case subscriptions = "subscriptions"
-        case tryAR = "try_ar"
-        case storiesVideo = "stories_video"
+        case moneyGo = "m"
+        case subscriptions = "s"
+        case tryAR = "t"
+        case storiesVideo = "sv"
     }
 }

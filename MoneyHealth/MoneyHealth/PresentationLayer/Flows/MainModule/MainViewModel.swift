@@ -107,13 +107,13 @@ final class MainViewModel: ViewModelProtocol {
             .subscribe(onNext: { stories in
                 var models: [SpendingItemModel] = []
                 if let value = stories?.subscriptions {
-                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .subsr)))
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: "http://195.91.231.34:5000" + value)!, style: .subsr)))
                 }
                 if let value = stories?.moneyGo {
-                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .video)))
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: "http://195.91.231.34:5000" + value)!, style: .video)))
                 }
                 if let value = stories?.tryAR {
-                    models.append(.init(data: .init(title: "", imageUrl: URL(string: value)!, style: .ar)))
+                    models.append(.init(data: .init(title: "", imageUrl: URL(string: "http://195.91.231.34:5000" + value)!, style: .ar)))
                 }
                 self.spendingsItemModel.items.onNext(models)
             })

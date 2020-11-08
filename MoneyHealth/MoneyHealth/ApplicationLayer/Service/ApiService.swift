@@ -214,7 +214,7 @@ class APIService {
     func getStories(byUserId id: Int) -> Single<StoriesModel> {
         return Single<StoriesModel>.create { single in
             AF.request(
-                "http://195.91.231.34:5000/user/stories/\(id)/",
+                "http://195.91.231.34:5000/user/stories/\(id)",
                 method: .get
             ).responseJSON { [weak self] json in
                 let decoder = JSONDecoder()
@@ -222,8 +222,7 @@ class APIService {
                     return
                 }
 
-//                let subscriptions = try! decoder.decode([StoriesModel].self, from: jsonData)
-                var subscriptions: [StoriesModel] = [StoriesModel(moneyGo: "http://195.91.231.34:5000/images/MoneyGoes.png", subscriptions: "http://195.91.231.34:5000/images/Subscriptions.png", tryAR: "http://195.91.231.34:5000/images/AR.png", storiesVideo: "http://195.91.231.34:5000/images/Stor2.mp4")]
+                let subscriptions = try! decoder.decode([StoriesModel].self, from: jsonData)
                 self?.stories.onNext(subscriptions.first)
                 single(.success(subscriptions.first!))
             }
