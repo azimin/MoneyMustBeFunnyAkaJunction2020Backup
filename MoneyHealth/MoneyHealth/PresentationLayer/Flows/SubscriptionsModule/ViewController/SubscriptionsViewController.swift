@@ -41,12 +41,25 @@ final class SubscriptionsViewController: CollectionViewController<SubscriptionsV
     }
 
     @objc func pushAllSubscriptions() {
-        let controller = SubscriptionDetailsViewController(subscription: (try! APIService.shared.nextSubscriptions.value()).first!)
-        let sheetController = SheetViewController(controller: controller)
-        self.present(sheetController, animated: true, completion: nil)
-
-        return
         let viewController = SubscriptionsListViewController(viewModel: .init())
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension UIWindow {
+    func topViewController() -> UIViewController? {
+        var top = self.rootViewController
+        while true {
+            if let presented = top?.presentedViewController {
+                top = presented
+            } else if let nav = top as? UINavigationController {
+                top = nav.visibleViewController
+            } else if let tab = top as? UITabBarController {
+                top = tab.selectedViewController
+            } else {
+                break
+            }
+        }
+        return top
     }
 }

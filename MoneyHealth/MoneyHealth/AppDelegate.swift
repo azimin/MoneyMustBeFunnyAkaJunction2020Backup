@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FittedSheets
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,7 +40,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.overrideUserInterfaceStyle = .light
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSubscription), name: .init(rawValue: "showSubsr"), object: nil)
+
         return true
+    }
+
+    @objc
+    func showSubscription(notification: Notification) {
+        guard let model = notification.object as? SubscriptionModel else {
+            return
+        }
+
+        let viewController = self.window?.topViewController()
+
+        let controller = SubscriptionDetailsViewController(subscription: model)
+        let sheetController = SheetViewController(controller: controller)
+        viewController?.present(sheetController, animated: true, completion: nil)
     }
 }
 

@@ -62,6 +62,11 @@ final class ListOfSubscriptionsDataSource: CollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
 
+        let item = self.items[indexPath.row]
+        NotificationCenter.default.post(
+            name: .init(rawValue: "showSubsr"),
+            object: item
+        )
     }
 
     func collectionView(
